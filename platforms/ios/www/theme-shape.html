@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<title>RAYVA</title>
+<!-- Link Swiper's CSS -->
+<link rel="stylesheet" href="css/swiper.css">
+<link href="css/style.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="js/basic.js"></script>
+</head>
+
+<body>
+  		<!--------------------POP Up-------------------->
+<div class="pop-bg"></div>
+<div class="pop-up" id="popup">
+  <div id="close">X</div>
+  <div id="content-wrap"></div>
+  <div class="clear"></div>
+</div>
+<!--------------------End Pop Up-------------------->
+
+<div class="maincontainer">
+  <div class="main">
+    <div class="theme-bg shape">
+      <div class="themetop">
+      <div class="back"><a href="theme.html"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></div>
+        <div class="logo">
+          <img src="images/logo.png" alt="">
+        </div>
+      </div>
+      <div class="theme-name"><a href="theme.html">shape</a></div>
+      <div class="theme-heading">Images of competition capture drama and action</div>
+      <!-- Swiper -->
+      <div class="sub-theme">
+      <div class="swiper-container">
+       
+        <div class="swiper-wrapper">
+          <div class="swiper-slide basketball">
+          	<a href="javascript:void(0);" data-href="images/shape/shapes1.jpg" class="pop-image" >
+            <div class="img"  style="background-image:url(images/shape/shapes1.jpg)"></div>
+            </a>
+          </div>
+          <div class="swiper-slide shape">
+          	<a href="javascript:void(0);" data-href="images/shape/shape2.jpg" class="pop-image" >
+            <div class="img"  style="background-image:url(images/shape/shapes2.jpg)"></div>
+            
+            </a>
+          </div>
+          <div class="swiper-slide seaspace">
+	        <a href="javascript:void(0);" data-href="images/shape/shapes3.jpg" class="pop-image" >
+            <div class="img"  style="background-image:url(images/shape/shapes3.jpg)"></div>
+            </a>
+          </div>
+      
+        </div>
+        <!-- Add Pagination -->
+        
+      </div>
+      </div>
+     
+    </div>
+  </div>
+</div>
+<!-- Swiper JS -->
+<script src="js/swiper.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper('.swiper-container', {
+       
+        slidesPerView: 2,
+		centeredSlides: true,
+        paginationClickable: true,
+        spaceBetween:0,
+        freeMode: false
+    });
+    </script>
+</body>
+</html>
