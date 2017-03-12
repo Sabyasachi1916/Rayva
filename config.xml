@@ -22,5 +22,16 @@
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
+        <icon src="icon-60@3x.png" platform="ios" width="180" height="180" />
+        
+        <!-- iPhone / iPod Touch  -->
+        <icon src="icon-60.png" platform="ios" width="60" height="60" />
+        <icon src="icon-60@2x.png" platform="ios" width="120" height="120" />
+        
+        <!-- iPad -->
+        <icon src="icon-76.png" platform="ios" width="76" height="76" />
+        <icon src="icon-76@2x.png" platform="ios" width="152" height="152" />
+        <icon src="icon-83.5@2x.png" platform="ios" width="167" height="167" />
+        
     </platform>
 </widget>
