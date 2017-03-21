@@ -59,5 +59,18 @@ $( ".material input, .material select,.material textarea" ).focusout(function() 
 		
 		return false;
     });
+	
+	$("ul.package li").click(function () {        
+	  	var tab_id = $(this).attr('data-tab');
+	  	$(".tab-package").hide();
+		
+	  	$("#"+tab_id).fadeIn(600);
+		
+	  	$("ul.package li").removeClass('active');
+	  	$(this).addClass('active');
+		
+		$(".tab-package").removeClass('active');
+		$("#"+tab_id).addClass('active');
+	});
 
 });	
