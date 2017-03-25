@@ -12,6 +12,29 @@
 <link href="css/style.css" type="text/css" rel="stylesheet">
 <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
 <script type="text/javascript" src="js/basic.js"></script>
+<script type="text/javascript">
+//document.getElementById("_1234").checked = true;
+ function codeAddress() {
+            localStorage.setItem("avreceiver","")
+            localStorage.setItem("speakerpackage","")
+            localStorage.setItem("avreceiver_last","")
+        }
+        window.onload = codeAddress;
+  function actionSearch(id) {
+           console.log("fired " + id);
+           var selectedValue = document.getElementById("span_"+id).innerText;
+           console.log(selectedValue)
+          if(id == "a1-1" || id == "a1-2" || id == "a1-3"){
+                localStorage.setItem("avreceiver",selectedValue)
+            }
+          if(id == "a2-1" || id == "a2-2"){
+                localStorage.setItem("speakerpackage",selectedValue)
+            }
+            if(id == "a3-1"){
+                localStorage.setItem("avreceiver_last",selectedValue)
+            }
+        }
+</script>
 </head>
 
 <body>
@@ -51,37 +74,37 @@
             	<li>
                 	<div class="label">AV Receiver</div>
                     <label class="checkbox" for="a1-1">
-                      <input onclick="javascript:actionSearch();" name="RadioGroup1" value="5" id="a1-1" type="radio">
-                      <span class="check-text">Marantz SR6011</span>
+                      <input onclick="javascript:actionSearch(id);" name="RadioGroup1" value="5" id="a1-1" type="radio">
+                      <span class="check-text" id="span_a1-1">Marantz SR6011</span>
                     </label>
                     <label class="checkbox" for="a1-2">
-                      <input onclick="javascript:actionSearch();" name="RadioGroup1" value="5" id="a1-2" type="radio">
-                      <span class="check-text">INTEGRA DRX-4</span>
+                      <input onclick="javascript:actionSearch(id);" name="RadioGroup1" value="5" id="a1-2" type="radio">
+                      <span class="check-text" id="span_a1-2">INTEGRA DRX-4</span>
                     </label>
                     <div class="other">Upgrade</div>
                     <label class="checkbox" for="a1-3">
-                      <input onclick="javascript:actionSearch();" name="RadioGroup1" value="5" id="a1-3" type="radio">
-                      <span class="check-text">INTEGRA DRX-5</span>
+                      <input onclick="javascript:actionSearch(id);" name="RadioGroup1" value="5" id="a1-3" type="radio">
+                      <span class="check-text" id="span_a1-3">INTEGRA DRX-5</span>
                       <span class="others-text">+$500</span>
                     </label>
                 </li>
                 <li>
                 	<div class="label">Speaker Package</div>
                     <label class="checkbox" for="a2-1">
-                      <input onclick="javascript:actionSearch();" name="RadioGroup2" value="5" id="a2-1" type="radio">
-                      <span class="check-text">Triad 7.1 On Wall Bronze</span>
+                      <input onclick="javascript:actionSearch(id);" name="RadioGroup2" value="5" id="a2-1" type="radio">
+                      <span class="check-text" id="span_a2-1">Triad 7.1 On Wall Bronze</span>
                     </label>
                     <label class="checkbox" for="a2-2">
-                      <input onclick="javascript:actionSearch();" name="RadioGroup2" value="5" id="a2-2" type="radio">
-                      <span class="check-text">KEF</span>
+                      <input onclick="javascript:actionSearch(id);" name="RadioGroup2" value="5" id="a2-2" type="radio">
+                      <span class="check-text" id="span_a2-2">KEF</span>
                     </label>
 
                 </li>
                 <li>
                 	<div class="label">AV Receiver</div>
                     <label class="checkbox" for="a3-1">
-                      <input onclick="javascript:actionSearch();" name="RadioGroup3" value="5" id="a3-1" type="radio">
-                      <span class="check-text">Future Ready</span>
+                      <input onclick="javascript:actionSearch(id);" name="RadioGroup3" value="5" id="a3-1" type="radio">
+                      <span class="check-text" id="span_a3-1">Future Ready</span>
                     </label>                  
                 </li>	
             </ul>

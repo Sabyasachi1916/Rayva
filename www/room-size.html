@@ -12,6 +12,19 @@
 <link href="css/style.css" type="text/css" rel="stylesheet">
 <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
 <script type="text/javascript" src="js/basic.js"></script>
+<script type="text/javascript">
+        function codeAddress() {
+            var saved = localStorage.getItem("package_id_roomsize")
+           console.log(saved)
+        $('ul.package li').each(function() {
+                if($(this).attr("data-tab") == saved){
+                    console.log("got the right li "+this)
+                    $(this).click();
+                }
+        })
+        }
+        window.onload = codeAddress;
+        </script>
 </head>
 
 <body>
@@ -34,7 +47,7 @@
       </div>
       <div class="theme-heading">Select theater floor plan closest to your room size</div>
       <!-- Swiper -->
-      <div class="package-left">
+      <div class="package-left" id="room_size">
       	<ul class="package">
         	<li class="" data-tab="tab1"><div>Small</div></li>
             <li data-tab="tab2"><div>Medium Short</div></li>

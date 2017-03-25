@@ -12,6 +12,19 @@
 <link href="css/style.css" type="text/css" rel="stylesheet">
 <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
 <script type="text/javascript" src="js/basic.js"></script>
+<script type="text/javascript">
+        function codeAddress() {
+            var saved = localStorage.getItem("package_id")
+           console.log(saved)
+        $('ul.package li').each(function() {
+                if($(this).attr("data-tab") == saved){
+                    console.log("got the right li "+this)
+                    $(this).click();
+                }
+        })
+        }
+        window.onload = codeAddress;
+        </script>
 </head>
 
 <body>
@@ -26,7 +39,7 @@
       </div>
       <div class="theme-heading">Select your package</div>
       <!-- Swiper -->
-      <div class="package-left">
+      <div class="package-left" id="theme">
       	<ul class="package">
         	<li class="active" data-tab="tab1"><div>GOLD</div></li>
             <li data-tab="tab2"><div>PLATINUM</div></li>
