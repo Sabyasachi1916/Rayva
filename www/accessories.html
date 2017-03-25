@@ -12,6 +12,25 @@
 <link href="css/style.css" type="text/css" rel="stylesheet">
 <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
 <script type="text/javascript" src="js/basic.js"></script>
+<script type="text/javascript">
+//document.getElementById("_1234").checked = true;
+ function codeAddress() {
+            localStorage.setItem("AV_Rack","")
+            localStorage.setItem("Playback","")
+        }
+        window.onload = codeAddress;
+  function actionSearch(id) {
+           console.log("fired " + id);
+           var selectedValue = document.getElementById("span-"+id).innerText;
+           console.log(selectedValue)
+          if(id == "ac1-1"){
+                localStorage.setItem("AV_Rack",selectedValue)
+            }
+          if(id == "ac2-1" || id == "ac2-2"){
+                localStorage.setItem("Playback",selectedValue)
+            }
+        }
+</script>
 </head>
 
 <body>
@@ -51,20 +70,20 @@
             	<li>
                 	<div class="label">AV Rack</div>
                     <label class="checkbox" for="ac1-1">
-                      <input onclick="javascript:actionSearch();" name="RadioGroup1" value="5" id="ac1-1" type="radio">
-                      <span class="check-text">Mid-Atlantic</span>
+                      <input onclick="javascript:actionSearch(id);" name="RadioGroup1" value="5" id="ac1-1" type="radio">
+                      <span class="check-text" id="span-ac1-1">Mid-Atlantic</span>
                     </label>
                 </li>
                 <li>
                 	<div class="label">Playback</div>
                     <label class="checkbox" for="ac2-1">
-                      <input onclick="javascript:actionSearch();" name="RadioGroup2" value="5" id="ac2-1" type="radio">
-                      <span class="check-text">Kaleidescape Alto</span>
+                      <input onclick="javascript:actionSearch(id);" name="RadioGroup2" value="5" id="ac2-1" type="radio">
+                      <span class="check-text" id="span-ac2-1">Kaleidescape Alto</span>
                     </label>
                      <div class="other">Upgrade</div>
                     <label class="checkbox" for="ac2-2">
-                      <input onclick="javascript:actionSearch();" name="RadioGroup2" value="5" id="ac2-2" type="radio">
-                      <span class="check-text">KALEIDESCAPE STRATO 4K</span>
+                      <input onclick="javascript:actionSearch(id);" name="RadioGroup2" value="5" id="ac2-2" type="radio">
+                      <span class="check-text" id="span-ac2-2">KALEIDESCAPE STRATO 4K</span>
                       <span class="others-text">+$2000</span>
                     </label>
                 </li>

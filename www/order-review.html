@@ -12,9 +12,125 @@
 <link href="css/style.css" type="text/css" rel="stylesheet">
 <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
 <script type="text/javascript" src="js/basic.js"></script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
+<script type="text/javascript">
+function codeAddress() {
+            var saved = localStorage.getItem("package")
+           console.log(saved)
+           document.getElementById("package").innerHTML = saved;
+
+           var saved2 = localStorage.getItem("room_size")
+           console.log(saved2)
+           var upper = saved2.toUpperCase();
+           document.getElementById("size").innerHTML = upper ;
+
+           var avreceiver = localStorage.getItem("avreceiver")
+           console.log(avreceiver)
+           var upper2 = avreceiver.toUpperCase();
+           document.getElementById("avreceiver").innerHTML = upper2 ;
+
+           var speakerpackage = localStorage.getItem("speakerpackage")
+           console.log(speakerpackage)
+           var upper3 = speakerpackage.toUpperCase();
+           document.getElementById("speakerpackage").innerHTML = upper3 ;
+
+           var avreceiver_last = localStorage.getItem("avreceiver_last")
+           console.log(avreceiver_last)
+           var upper3 = avreceiver_last.toUpperCase();
+           document.getElementById("avreceiver_last").innerHTML = upper3 ;
+
+           var Projector = localStorage.getItem("Projector")
+           console.log(Projector)
+           var upper4 = Projector.toUpperCase();
+           document.getElementById("Projector").innerHTML = upper4 ;
+
+            var Screen = localStorage.getItem("Screen")
+           console.log(Screen)
+           var upper5 = Screen.toUpperCase();
+           document.getElementById("Screen").innerHTML = upper5 ;
+
+           var Projector_mounto = localStorage.getItem("Projector_mount")
+           console.log(Projector_mounto)
+           var upper6 = Projector_mounto.toUpperCase();
+           document.getElementById("Projector_mount").innerHTML = upper6 ;
+
+           var Control_Package = localStorage.getItem("Control_Package")
+           console.log(Control_Package)
+           // var upper7 = Control_Package.toUpperCase();
+           document.getElementById("Control_Package").innerHTML = Control_Package ;
+
+           var Lighting_Track = localStorage.getItem("Lighting_Track")
+           console.log(Lighting_Track)
+           var upper8 = Lighting_Track.toUpperCase();
+           document.getElementById("Control_Package").innerHTML = upper8 ;
+
+           var Light_Bulbs = localStorage.getItem("Light_Bulbs")
+           console.log(Light_Bulbs)
+           //var upper9 = Light_Bulbs.toUpperCase();
+           document.getElementById("Light_Bulbs").innerHTML = Light_Bulbs ;
+
+           var Power_Protection = localStorage.getItem("Power_Protection")
+           console.log(Power_Protection)
+           var upper10 = Power_Protection.toUpperCase();
+           document.getElementById("Power_Protection").innerHTML = upper10 ;
+
+           var AV_Rack = localStorage.getItem("AV_Rack")
+           console.log(AV_Rack)
+           var upper11 = AV_Rack.toUpperCase();
+           document.getElementById("AV_Rack").innerHTML = upper11 ;
+
+           var Playback = localStorage.getItem("Playback")
+           console.log(Playback)
+           var upper12 = Playback.toUpperCase();
+           document.getElementById("Playback").innerHTML = upper12 ;
+
+           var name = localStorage.getItem("name")
+           console.log(name)
+           var upper13 = name.toUpperCase();
+           document.getElementById("name").innerHTML = upper13 ;
+
+           var contact = localStorage.getItem("contact")
+           console.log(contact)
+           document.getElementById("contact").innerHTML = contact ;
+
+           var email = localStorage.getItem("email")
+           console.log(email)
+           document.getElementById("email").innerHTML = email ;
+
+           var street = localStorage.getItem("street")
+           console.log(street)
+           document.getElementById("street").innerHTML = street ;
+
+           var city = localStorage.getItem("city")
+           console.log(city)
+           document.getElementById("city").innerHTML = city ;
+
+           var state = localStorage.getItem("state")
+           console.log(state)
+           document.getElementById("state").innerHTML = state ;
+
+           var zip = localStorage.getItem("zip")
+           console.log(zip)
+           document.getElementById("zip").innerHTML = zip ;
+
+           
+        }
+        window.onload = codeAddress;
+        var specialElementHandlers = {'#editor': function (element, renderer) {
+        return true;}};
+
+        function Print() {
+            var doc = new jsPDF();
+            doc.fromHTML($('html').html(), 15, 15, { 'width': 700,'elementHandlers': specialElementHandlers});
+            doc.save('sample-content.pdf');
+            location.href="share.html"
+        }
+         </script>
+
+
 </head>
 
-<body>
+<body class="content">
 <div class="maincontainer">
   <div class="main">
     <div class="theme-bg football">
@@ -30,17 +146,17 @@
 			<ul class="list list1">
             	<li>
                 	
-                	<div class="heading"><span>Theme</span><div class="icon"><img src="images/theme.png" alt=""></div>FOOTBALL</div>
+                	<div class="heading"><span>Theme</span><div class="icon"><img src="images/theme.png" alt=""></div><div id="theme">FOOTBALL</div></div>
                 </li>
                 
                 <li>
                 	
-                	<div class="heading"><span>Package</span><div class="icon"><img src="images/package.png" alt=""></div>GOLD</div>
+                	<div class="heading"><span>Package</span><div class="icon"><img src="images/package.png" alt=""></div><div id="package">GOLD</div></div>
                 </li>
                 
                 <li>
                 	
-                	<div class="heading"><span>Size</span><div class="icon"><img src="images/size.png" alt=""></div>MEDIUM LONG</div>
+                	<div class="heading"><span>Size</span><div class="icon"><img src="images/size.png" alt=""></div><div id="size">MEDIUM LONG</div></div>
                 </li> 
                 <div class="clear"></div>   
             </ul> 
@@ -52,9 +168,9 @@
                     	<div class="icon"><img src="images/audio.png" alt=""></div>
                         AUDIO
                     </div>
-                    <div class="name"><span>Audio Visual Receiver</span>Marantz SR6011</div>
-                    <div class="name"><span>Speaker Package</span>KEF</div>
-                    <div class="name"><span>Speaker Wire</span>Future Ready</div>
+                    <div class="name"><span>Audio Visual Receiver</span><div id="avreceiver">Marantz SR6011</div></div>
+                    <div class="name"><span>Speaker Package</span><div id="speakerpackage">KEF</div></div>
+                    <div class="name"><span>Speaker Wire</span><div id="avreceiver_last">Future Ready</div></div>
                     
                 </li>
                 <li>
@@ -62,27 +178,27 @@
                     	<div class="icon"><img src="images/video.png" alt=""></div>
                         VIDEO
                     </div>
-                    <div class="name"><span>Projector</span>Sony VPLHW65ES 1080p 3D SXRD</div>
-                    <div class="name"><span>Screen</span>Vutec 11' wide 2.4:1 aspect screen</div>
-                    <div class="name"><span>Projector Mount</span>Chief RPM AU </div>
+                    <div class="name"><span>Projector</span><div id="Projector">Sony VPLHW65ES 1080p 3D SXRD</div></div>
+                    <div class="name"><span>Screen</span><div id="Screen">Vutec 11' wide 2.4:1 aspect screen</div></div>
+                    <div class="name"><span>Projector Mount</span><div id="Projector_mount">Chief RPM AU </div></div>
                 </li>
                 <li>
                 	<div class="heading">
                     	<div class="icon"><img src="images/others.png" alt=""></div>
                         others
                     </div>
-                    <div class="name"><span>Control Package</span>Savant</div>
-                    <div class="name"><span>Lighting</span>Jesco Lighting Group</div>
-                    <div class="name"><span>Light Bulbs</span>Jesco Lighting Group</div>
-                    <div class="name"><span>Power Protection</span>Chief RPM AU </div>
+                    <div class="name"><span>Control Package</span><div id="Control_Package">Savant</div></div> 
+                    <div class="name"><span>Lighting</span><div id="Lighting_Track">Jesco Lighting Group</div></div>
+                    <div class="name"><span>Light Bulbs</span><div id="Light_Bulbs">Jesco Lighting Group</div></div>
+                    <div class="name"><span>Power Protection</span><div id="Power_Protection">Chief RPM AU </div></div>
                 </li>
                 <li>
                 	<div class="heading">
                     	<div class="icon"><img src="images/accessories.png" alt=""></div>
                         Accessories
                     </div>
-                    <div class="name"><span>Audio Visual Rack</span>Mid-Atlantic</div>
-                    <div class="name"><span>Mid-Atlantic</span>Kaleidescape Alto</div>
+                    <div class="name"><span>Audio Visual Rack</span><div id="AV_Rack">Mid-Atlantic</div></div>
+                    <div class="name"><span>Mid-Atlantic</span><div id="Playback">Kaleidescape Alto</div></div>
                    
                 </li>
                  <div class="clear"></div>
@@ -90,27 +206,27 @@
             <div class="clear"></div>
             <ul class="list">
             	<li>
-                    <div class="name"><span>Name</span>Johndoe|</div>
+                    <div class="name"><span>Name</span><div id="name">Johndoe|</div></div>
                 </li>
                 <li>
-                    <div class="name"><span>Contact Number</span>+ 01 889966644</div>
+                    <div class="name"><span>Contact Number</span><div id="contact">+ 01 889966644</div></div>
                 </li>
                 <li>
-                    <div class="name"><span>E-mail</span>johndoe@gmail.com</div>
+                    <div class="name"><span>E-mail</span><div id="email">johndoe@gmail.com</div></div>
                 </li>
                 
                 <li>
-                    <div class="name"><span>Street name</span>221B Baker Street</div>
+                    <div class="name"><span>Street name</span><div id="street">221B Baker Street</div></div>
                 </li>
                 <div class="clear"></div>
                 <li>
-                    <div class="name"><span>City</span>Washington</div>
+                    <div class="name"><span>City</span><div id="city">Washington</div></div>
                 </li>
                 <li>
-                    <div class="name"><span>State</span>Sample</div>
+                    <div class="name"><span>State</span><div id="state">Sample</div></div>
                 </li>
                 <li>
-                    <div class="name"><span>Zipcode</span>090021</div>
+                    <div class="name"><span>Zipcode</span><div id="zip">090021</div></div>
                 </li>
                 <li>
                     <div class="name"><span>Country</span>United State of America</div>
@@ -120,8 +236,8 @@
             <div class="clear"></div>
             <div class="control-footer">
       		<div class="price">Total price of Package: Gold<span>$78,000</span></div>
-        
-             <div class="theme-btn"><a href="share.html" class="btn">Next</a></div>
+            <!-- <div class="theme-btn"><a href="share.html" class="btn">Next</a></div> -->
+             <div class="theme-btn" onclick="javascript:Print();"><a href="" class="btn">Next</a></div>
             </div>
       </div>
       

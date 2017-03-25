@@ -12,6 +12,29 @@
 <link href="css/style.css" type="text/css" rel="stylesheet">
 <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
 <script type="text/javascript" src="js/basic.js"></script>
+<script type="text/javascript">
+//document.getElementById("_1234").checked = true;
+ function codeAddress() {
+            localStorage.setItem("Projector","")
+            localStorage.setItem("Screen","")
+            localStorage.setItem("Projector_mount","")
+        }
+        window.onload = codeAddress;
+  function actionSearch(id) {
+           console.log("fired " + id);
+           var selectedValue = document.getElementById("span_"+id).innerText;
+           console.log(selectedValue)
+          if(id == "v1-1" || id == "v1-2" || id == "v1-3"){
+                localStorage.setItem("Projector",selectedValue)
+            }
+          if(id == "v2-1" || id == "v2-2"){
+                localStorage.setItem("Screen",selectedValue)
+            }
+            if(id == "v3-1"){
+                localStorage.setItem("Projector_mount",selectedValue)
+            }
+        }
+</script>
 </head>
 
 <body>
@@ -51,32 +74,32 @@
             	<li>
                 	<div class="label">Projector</div>
                     <label class="checkbox" for="v1-1">
-                      <input onclick="javascript:actionSearch();" name="RadioGroup1" value="5" id="v1-1" type="radio">
-                      <span class="check-text">Sony VPLHW65ES 1080p 3D SXRD</span>
+                      <input onclick="javascript:actionSearch(id);" name="RadioGroup1" value="5" id="v1-1" type="radio">
+                      <span class="check-text" id="span_v1-1">Sony VPLHW65ES 1080p 3D SXRD</span>
                     </label>
                     <label class="checkbox" for="v1-2">
-                      <input onclick="javascript:actionSearch();" name="RadioGroup1" value="5" id="v1-2" type="radio">
-                      <span class="check-text">Epson Home Cinema 6040UB 1080p 3D</span>
+                      <input onclick="javascript:actionSearch(id);" name="RadioGroup1" value="5" id="v1-2" type="radio">
+                      <span class="check-text" id="span_v1-2">Epson Home Cinema 6040UB 1080p 3D</span>
                     </label>
                     <div class="other">Upgrade</div>
                     <label class="checkbox" for="v1-3">
-                      <input onclick="javascript:actionSearch();" name="RadioGroup1" value="5" id="v1-3" type="radio">
-                      <span class="check-text">Sony VPLVW365ES Native 4K HDR 3D SXRD</span>
+                      <input onclick="javascript:actionSearch(id);" name="RadioGroup1" value="5" id="v1-3" type="radio">
+                      <span class="check-text" id="span_v1-3">Sony VPLVW365ES Native 4K HDR 3D SXRD</span>
                       <span class="others-text">+$6000</span>
                     </label>
                 </li>
                 <li>
                 	<div class="label">Screen</div>
                     <label class="checkbox" for="v2-1">
-                      <input onclick="javascript:actionSearch();" name="RadioGroup2" value="5" id="v2-1" type="radio">
-                      <span class="check-text">Vutec 11' wide 2.4:1 aspect RATIO</span>
+                      <input onclick="javascript:actionSearch(id);" name="RadioGroup2" value="5" id="v2-1" type="radio">
+                      <span class="check-text" id="span_v2-1">Vutec 11' wide 2.4:1 aspect RATIO</span>
                     </label>
                 </li>
                 <li>
                 	<div class="label">Projector Mount</div>
                     <label class="checkbox" for="v3-1">
-                      <input onclick="javascript:actionSearch();" name="RadioGroup3" value="5" id="v3-1" type="radio">
-                      <span class="check-text">Chief RPM AU</span>
+                      <input onclick="javascript:actionSearch(id);" name="RadioGroup3" value="5" id="v3-1" type="radio">
+                      <span class="check-text" id="span_v3-1">Chief RPM AU</span>
                     </label>                  
                 </li>	
             </ul>

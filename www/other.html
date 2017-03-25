@@ -12,6 +12,33 @@
 <link href="css/style.css" type="text/css" rel="stylesheet">
 <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
 <script type="text/javascript" src="js/basic.js"></script>
+<script type="text/javascript">
+//document.getElementById("_1234").checked = true;
+ function codeAddress() {
+            localStorage.setItem("Control_Package","")
+            localStorage.setItem("Lighting_Track","")
+            localStorage.setItem("Light_Bulbs","")
+            localStorage.setItem("Power_Protection","")
+        }
+        window.onload = codeAddress;
+  function actionSearch(id) {
+           console.log("fired " + id);
+           var selectedValue = document.getElementById("span-"+id).innerText;
+           console.log(selectedValue)
+          if(id == "o1-1" || id == "o1-2" || id == "o1-3"){
+                localStorage.setItem("Control_Package",selectedValue)
+            }
+          if(id == "o2-1" || id == "o2-2"){
+                localStorage.setItem("Lighting_Track",selectedValue)
+            }
+            if(id == "o3-1"){
+                localStorage.setItem("Light_Bulbs",selectedValue)
+            }
+            if(id == "o4-1"){
+                localStorage.setItem("Power_Protection",selectedValue)
+            }
+        }
+</script>
 </head>
 
 <body>
@@ -51,37 +78,37 @@
             	<li>
                 	<div class="label">Control Package</div>
                     <label class="checkbox" for="o1-1">
-                      <input onclick="javascript:actionSearch();" name="RadioGroup1" value="5" id="o1-1" type="radio">
-                      <span class="check-text">Elan</span>
+                      <input onclick="javascript:actionSearch(id);" name="RadioGroup1" value="5" id="o1-1" type="radio">
+                      <span class="check-text" id="span-o1-1">Elan</span>
                     </label>
                     <label class="checkbox" for="o1-2">
-                      <input onclick="javascript:actionSearch();" name="RadioGroup1" value="5" id="o1-2" type="radio">
-                      <span class="check-text">Savant</span>
+                      <input onclick="javascript:actionSearch(id);" name="RadioGroup1" value="5" id="o1-2" type="radio">
+                      <span class="check-text" id="span-o1-2">Savant</span>
                     </label>
                     <label class="checkbox" for="o1-3">
-                      <input onclick="javascript:actionSearch();" name="RadioGroup1" value="5" id="o1-3" type="radio">
-                      <span class="check-text">Creston</span>
+                      <input onclick="javascript:actionSearch(id);" name="RadioGroup1" value="5" id="o1-3" type="radio">
+                      <span class="check-text" id="span-o1-3">Creston</span>
                     </label>
                 </li>
                 <li>
                 	<div class="label">Lighting Track</div>
                     <label class="checkbox" for="o2-1">
-                      <input onclick="javascript:actionSearch();" name="RadioGroup2" value="5" id="o2-1" type="radio">
-                      <span class="check-text">Jesco Lighting Group</span>
+                      <input onclick="javascript:actionSearch(id);" name="RadioGroup2" value="5" id="o2-1" type="radio">
+                      <span class="check-text" id="span-o2-1">Jesco Lighting Group</span>
                     </label>
                 </li>
                 <li>
                 	<div class="label">Light Bulbs</div>
                     <label class="checkbox" for="o3-1">
-                      <input onclick="javascript:actionSearch();" name="RadioGroup3" value="5" id="o3-1" type="radio">
-                      <span class="check-text">Jesco Lighting Group</span>
+                      <input onclick="javascript:actionSearch(id);" name="RadioGroup3" value="5" id="o3-1" type="radio">
+                      <span class="check-text"  id="span-o3-1">Jesco Lighting Group</span>
                     </label>                  
                 </li>
                 <li>
                 	<div class="label">Power Protection</div>
                     <label class="checkbox" for="o4-1">
-                      <input onclick="javascript:actionSearch();" name="RadioGroup4" value="5" id="o4-1" type="radio">
-                      <span class="check-text">Taurus</span>
+                      <input onclick="javascript:actionSearch(id);" name="RadioGroup4" value="5" id="o4-1" type="radio">
+                      <span class="check-text" id="span-o4-1">Taurus</span>
                     </label>                  
                 </li>	
             </ul>
