@@ -15,6 +15,10 @@
 <script type="text/javascript">
 //document.getElementById("_1234").checked = true;
  function codeAddress() {
+            var price = localStorage.getItem("price_video");
+            console.log("price_",price);
+            document.getElementById("price_tag").innerText = "$"+price
+            localStorage.setItem("price_other",price)
             localStorage.setItem("Control_Package","")
             localStorage.setItem("Lighting_Track","")
             localStorage.setItem("Light_Bulbs","")
@@ -79,7 +83,7 @@
                 	<div class="label">Control Package</div>
                     <label class="checkbox" for="o1-1">
                       <input onclick="javascript:actionSearch(id);" name="RadioGroup1" value="5" id="o1-1" type="radio">
-                      <span class="check-text" id="span-o1-1">Elan</span>
+                      <span class="check-text" id="span-o1-1">Elan GXP12</span>
                     </label>
                     <label class="checkbox" for="o1-2">
                       <input onclick="javascript:actionSearch(id);" name="RadioGroup1" value="5" id="o1-2" type="radio">
@@ -108,7 +112,7 @@
                 	<div class="label">Power Protection</div>
                     <label class="checkbox" for="o4-1">
                       <input onclick="javascript:actionSearch(id);" name="RadioGroup4" value="5" id="o4-1" type="radio">
-                      <span class="check-text" id="span-o4-1">Taurus</span>
+                      <span class="check-text" id="span-o4-1">Torus</span>
                     </label>                  
                 </li>	
             </ul>
@@ -118,7 +122,7 @@
       </div>
       <!-- Swiper -->
       <div class="control-footer">
-      		<div class="price">Total price of Package: Gold<span>$78,000</span></div>
+      		<div class="price">Total price of Package: Gold<span><div id="price_tag">$78,000</div></span></div>
 
    		 <div class="theme-btn"><a href="accessories.html" class="btn">Next</a></div>
     	</div>

@@ -79,10 +79,27 @@ $( ".material input, .material select,.material textarea" ).focusout(function() 
 		if (parentHere == "theme") {
 			localStorage.setItem("package", $(".active div").get(0).innerHTML);
 			localStorage.setItem("package_id",tab_id);
+			if (tab_id == "tab1"){
+				localStorage.setItem("price_package",78000);
+			}
+			if (tab_id == "tab2"){
+				localStorage.setItem("price_package",150000);
+			}
+			if (tab_id == "tab3"){
+				localStorage.setItem("price_package",250000);
+			}
+			if (tab_id == "tab4"){
+				localStorage.setItem("price_package",500000);
+			}
+			console.log("price_selected",localStorage.getItem("price_package"));
 		}
 		if (parentHere == "room_size") {
 			localStorage.setItem("room_size", $(".active div").get(0).innerHTML);
 			localStorage.setItem("package_id_roomsize",tab_id);
+			 var price = localStorage.getItem("price_package");
+            console.log("price_",price);
+            document.getElementById("tag").innerText = "$"+price
+            localStorage.setItem("price_room",price);
 		}
 	});
 	

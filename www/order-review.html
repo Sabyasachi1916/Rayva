@@ -13,46 +13,52 @@
 <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
 <script type="text/javascript" src="js/basic.js"></script>
 <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
+<script type="text/javascript" src="html2canvas.js"></script>
 <script type="text/javascript">
 function codeAddress() {
+
+			var price = localStorage.getItem("price_acc");
+            console.log("price_",price);
+            document.getElementById("price_tag").innerText = "$"+price
+
             var saved = localStorage.getItem("package")
            console.log(saved)
            document.getElementById("package").innerHTML = saved;
 
            var saved2 = localStorage.getItem("room_size")
            console.log(saved2)
-           var upper = saved2.toUpperCase();
-           document.getElementById("size").innerHTML = upper ;
+           // var upper = saved2.toUpperCase();
+           document.getElementById("size").innerHTML = saved2 ;
 
            var avreceiver = localStorage.getItem("avreceiver")
            console.log(avreceiver)
-           var upper2 = avreceiver.toUpperCase();
-           document.getElementById("avreceiver").innerHTML = upper2 ;
+           // var upper2 = avreceiver.toUpperCase();
+           document.getElementById("avreceiver").innerHTML = avreceiver ;
 
            var speakerpackage = localStorage.getItem("speakerpackage")
            console.log(speakerpackage)
-           var upper3 = speakerpackage.toUpperCase();
-           document.getElementById("speakerpackage").innerHTML = upper3 ;
+           // var upper3 = speakerpackage.toUpperCase();
+           document.getElementById("speakerpackage").innerHTML = speakerpackage ;
 
            var avreceiver_last = localStorage.getItem("avreceiver_last")
            console.log(avreceiver_last)
-           var upper3 = avreceiver_last.toUpperCase();
-           document.getElementById("avreceiver_last").innerHTML = upper3 ;
+           // var upper3 = avreceiver_last.toUpperCase();
+           document.getElementById("avreceiver_last").innerHTML = avreceiver_last ;
 
            var Projector = localStorage.getItem("Projector")
            console.log(Projector)
-           var upper4 = Projector.toUpperCase();
-           document.getElementById("Projector").innerHTML = upper4 ;
+           // var upper4 = Projector.toUpperCase();
+           document.getElementById("Projector").innerHTML = Projector ;
 
             var Screen = localStorage.getItem("Screen")
            console.log(Screen)
-           var upper5 = Screen.toUpperCase();
-           document.getElementById("Screen").innerHTML = upper5 ;
+           // var upper5 = Screen.toUpperCase();
+           document.getElementById("Screen").innerHTML = Screen ;
 
            var Projector_mounto = localStorage.getItem("Projector_mount")
            console.log(Projector_mounto)
-           var upper6 = Projector_mounto.toUpperCase();
-           document.getElementById("Projector_mount").innerHTML = upper6 ;
+           // var upper6 = Projector_mounto.toUpperCase();
+           document.getElementById("Projector_mount").innerHTML = Projector_mounto ;
 
            var Control_Package = localStorage.getItem("Control_Package")
            console.log(Control_Package)
@@ -61,8 +67,8 @@ function codeAddress() {
 
            var Lighting_Track = localStorage.getItem("Lighting_Track")
            console.log(Lighting_Track)
-           var upper8 = Lighting_Track.toUpperCase();
-           document.getElementById("Control_Package").innerHTML = upper8 ;
+           // var upper8 = Lighting_Track.toUpperCase();
+           document.getElementById("Control_Package").innerHTML = Lighting_Track ;
 
            var Light_Bulbs = localStorage.getItem("Light_Bulbs")
            console.log(Light_Bulbs)
@@ -71,23 +77,23 @@ function codeAddress() {
 
            var Power_Protection = localStorage.getItem("Power_Protection")
            console.log(Power_Protection)
-           var upper10 = Power_Protection.toUpperCase();
-           document.getElementById("Power_Protection").innerHTML = upper10 ;
+           // var upper10 = Power_Protection.toUpperCase();
+           document.getElementById("Power_Protection").innerHTML = Power_Protection ;
 
            var AV_Rack = localStorage.getItem("AV_Rack")
            console.log(AV_Rack)
-           var upper11 = AV_Rack.toUpperCase();
-           document.getElementById("AV_Rack").innerHTML = upper11 ;
+           // var upper11 = AV_Rack.toUpperCase();
+           document.getElementById("AV_Rack").innerHTML = AV_Rack ;
 
            var Playback = localStorage.getItem("Playback")
            console.log(Playback)
-           var upper12 = Playback.toUpperCase();
-           document.getElementById("Playback").innerHTML = upper12 ;
+           // var upper12 = Playback.toUpperCase();
+           document.getElementById("Playback").innerHTML = Playback ;
 
            var name = localStorage.getItem("name")
            console.log(name)
-           var upper13 = name.toUpperCase();
-           document.getElementById("name").innerHTML = upper13 ;
+           // var upper13 = name.toUpperCase();
+           document.getElementById("name").innerHTML = name ;
 
            var contact = localStorage.getItem("contact")
            console.log(contact)
@@ -125,8 +131,18 @@ function codeAddress() {
             doc.save('sample-content.pdf');
             location.href="share.html"
         }
-         </script>
 
+
+        function take_screenshot()
+			{
+ 				html2canvas(document.body, {  
+  				onrendered: function(canvas)  
+  					{
+    						var img = canvas.toDataURL();
+  					}
+ 				});
+		}
+         </script>
 
 </head>
 
@@ -235,7 +251,7 @@ function codeAddress() {
             </ul>
             <div class="clear"></div>
             <div class="control-footer">
-      		<div class="price">Total price of Package: Gold<span>$78,000</span></div>
+      		<div class="price">Total price of Package: Gold<span><div id="price_tag">$78,000</div></span></div>
             <!-- <div class="theme-btn"><a href="share.html" class="btn">Next</a></div> -->
              <div class="theme-btn" onclick="javascript:Print();"><a href="" class="btn">Next</a></div>
             </div>

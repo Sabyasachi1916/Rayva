@@ -15,9 +15,14 @@
 <script type="text/javascript">
 //document.getElementById("_1234").checked = true;
  function codeAddress() {
+            var price = localStorage.getItem("price_audio");
+            console.log("price_",price);
+            document.getElementById("price_tag").innerText = "$"+price
+            localStorage.setItem("price_video",price)
             localStorage.setItem("Projector","")
             localStorage.setItem("Screen","")
             localStorage.setItem("Projector_mount","")
+            localStorage.setItem("upgraded_video","false")
         }
         window.onload = codeAddress;
   function actionSearch(id) {
@@ -26,6 +31,34 @@
            console.log(selectedValue)
           if(id == "v1-1" || id == "v1-2" || id == "v1-3"){
                 localStorage.setItem("Projector",selectedValue)
+                var up = localStorage.getItem("upgraded_video")
+                if (id == "v1-3")
+                {
+                   if (up == "false")
+                   {
+                    var price = localStorage.getItem("price_video");
+                    var price2 = parseInt(price) + 6000;
+                    console.log("price 1_"+ price2);
+                    localStorage.setItem("price_video",price2);
+                    localStorage.setItem("upgraded_video","true");
+                    document.getElementById("price_tag").innerText = "$"+price2
+
+                   }
+                  
+                }
+                else{
+                if (up == "true")
+                {
+                    var price = localStorage.getItem("price_video");
+                    var price2 = parseInt(price) - 6000;
+                    console.log("price 2_"+ price2);
+                    localStorage.setItem("price_video",price2);
+                    localStorage.setItem("upgraded_video","false");
+                    document.getElementById("price_tag").innerText = "$"+price2
+                  }
+                }
+                var pri = localStorage.getItem("price_video")
+                 console.log("price_"+ pri);
             }
           if(id == "v2-1" || id == "v2-2"){
                 localStorage.setItem("Screen",selectedValue)
@@ -92,7 +125,7 @@
                 	<div class="label">Screen</div>
                     <label class="checkbox" for="v2-1">
                       <input onclick="javascript:actionSearch(id);" name="RadioGroup2" value="5" id="v2-1" type="radio">
-                      <span class="check-text" id="span_v2-1">Vutec 11' wide 2.4:1 aspect RATIO</span>
+                      <span class="check-text" id="span_v2-1">Vutec 11' wide 2.4:1 aspect Ratio</span>
                     </label>
                 </li>
                 <li>
@@ -109,7 +142,7 @@
       </div>
       <!-- Swiper -->
       <div class="control-footer">
-      		<div class="price">Total price of Package: Gold<span>$78,000</span></div>
+      		<div class="price">Total price of Package: Gold<span><div id="price_tag">$78,000</div></span></div>
 
    		 <div class="theme-btn"><a href="other.html" class="btn">Next</a></div>
     	</div>

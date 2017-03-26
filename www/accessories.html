@@ -17,6 +17,11 @@
  function codeAddress() {
             localStorage.setItem("AV_Rack","")
             localStorage.setItem("Playback","")
+            var price = localStorage.getItem("price_other");
+            console.log("price_",price);
+            document.getElementById("price_tag").innerText = "$"+price
+            localStorage.setItem("price_acc",price)
+            localStorage.setItem("upgraded_accessories","false")
         }
         window.onload = codeAddress;
   function actionSearch(id) {
@@ -28,6 +33,34 @@
             }
           if(id == "ac2-1" || id == "ac2-2"){
                 localStorage.setItem("Playback",selectedValue)
+                var up = localStorage.getItem("upgraded_accessories")
+                if (id == "ac2-2")
+                {
+                   if (up == "false")
+                   {
+                    var price = localStorage.getItem("price_acc");
+                    var price2 = parseInt(price) + 2000;
+                    console.log("price 1_"+ price2);
+                    localStorage.setItem("price_acc",price2);
+                    localStorage.setItem("upgraded_accessories","true");
+                    document.getElementById("price_tag").innerText = "$"+price2
+
+                   }
+                  
+                }
+                else{
+                if (up == "true")
+                {
+                    var price = localStorage.getItem("price_acc");
+                    var price2 = parseInt(price) - 2000;
+                    console.log("price 2_"+ price2);
+                    localStorage.setItem("price_acc",price2);
+                    localStorage.setItem("upgraded_accessories","false");
+                    document.getElementById("price_tag").innerText = "$"+price2
+                  }
+                }
+                var pri = localStorage.getItem("price_acc")
+                 console.log("price_"+ pri);
             }
         }
 </script>
@@ -83,7 +116,7 @@
                      <div class="other">Upgrade</div>
                     <label class="checkbox" for="ac2-2">
                       <input onclick="javascript:actionSearch(id);" name="RadioGroup2" value="5" id="ac2-2" type="radio">
-                      <span class="check-text" id="span-ac2-2">KALEIDESCAPE STRATO 4K</span>
+                      <span class="check-text" id="span-ac2-2">Kaleidescape Strato 4K</span>
                       <span class="others-text">+$2000</span>
                     </label>
                 </li>
@@ -95,7 +128,7 @@
       </div>
       <!-- Swiper -->
       <div class="control-footer">
-      		<div class="price">Total price of Package: Gold<span>$78,000</span></div>
+      		<div class="price">Total price of Package: Gold<span><div id="price_tag">$78,000</div></span></div>
 
    		 <div class="theme-btn"><a href="order.html" class="btn">Next</a></div>
     	</div>
