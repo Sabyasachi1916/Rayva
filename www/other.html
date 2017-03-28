@@ -16,15 +16,20 @@
 //document.getElementById("_1234").checked = true;
  function codeAddress() {
             var price = localStorage.getItem("price_video");
-            console.log("price_",price);
+             console.log("price_",price);
+             console.log("I am in function");
             document.getElementById("price_tag").innerText = "$"+price
             localStorage.setItem("price_other",price)
-            localStorage.setItem("Control_Package","")
-            localStorage.setItem("Lighting_Track","")
-            localStorage.setItem("Light_Bulbs","")
-            localStorage.setItem("Power_Protection","")
+            localStorage.setItem("Control_Package","Elan GXP12")
+            localStorage.setItem("Lighting_Track","Jesco Lighting Group")
+            localStorage.setItem("Light_Bulbs","Jesco Lighting Group")
+            localStorage.setItem("Power_Protection","Torus")
+            actionSearch("o1-1");
+            actionSearch("o2-1");
+            actionSearch("o3-1");
+            actionSearch("o4-1");
         }
-        window.onload = codeAddress;
+        
   function actionSearch(id) {
            console.log("fired " + id);
            var selectedValue = document.getElementById("span-"+id).innerText;
@@ -42,7 +47,7 @@
                 localStorage.setItem("Power_Protection",selectedValue)
             }
         }
-		function("#o1-2").click();
+	window.onload = codeAddress;
 </script>
 </head>
 

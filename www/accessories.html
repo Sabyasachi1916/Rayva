@@ -23,6 +23,8 @@
             document.getElementById("price_tag").innerText = "$"+price
             localStorage.setItem("price_acc",price)
             localStorage.setItem("upgraded_accessories","false")
+            actionSearch("ac1-1");
+            actionSearch("ac2-1");
         }
         window.onload = codeAddress;
   function actionSearch(id) {
