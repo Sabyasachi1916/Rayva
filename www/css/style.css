@@ -182,7 +182,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e52a6f', end
 
 .basketball:before{ background-image:url(../images/basketball/basketball1.jpg)}
 
-.seaspace:before{ background-image:url(../images/seaspace/seaspace1.jpg)}
+.seascape:before{ background-image:url(../images/seascape/seascape1.jpg)}
 
 .audi:before{ background-image:url(../images/audio.jpg);}
 .video:before{ background-image:url(../images/video.jpg);}
@@ -343,7 +343,7 @@ ul.control-list li .others-text{color: #DDD819; font-size:18px; }
 .order-review ul.list li .name span{font-size: 12px;line-height: 15px;font-family: 'gothamlight';margin-bottom:14px;display:block;}
 .order-review .control-footer{padding-top:10px;}
 .order-review .control-footer .price{color: #000000;}
-.share{position:relative;height:calc(100% - 210px)}
+.share{position:relative;height:calc(100% - 400px)}
 .share ul{padding:0; margin:0; list-style:none; position:absolute;top:50%; text-align:center; transform:translate(-50%,-70%); left:50%;width:100%;}
 .share ul li{width:250px; height:250px;border-radius: 10px;background:#fff;display:inline-block;margin:35px;padding:10px; box-sizing:border-box;font-size: 20px;line-height: 24px;color: #000000;text-transform:uppercase; font-weight:bold;}
 .share ul li.active,.share ul li:active,.share ul li:focus,.share ul li:hover{box-shadow: inset 10px 10px 40px 0 rgba(0,0,0,0.2);color:#fff;background: rgb(0,146,156);

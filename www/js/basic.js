@@ -156,19 +156,19 @@ $( ".material input, .material select,.material textarea" ).focusout(function() 
 			 var price = localStorage.getItem("price_package");
 
             console.log("price_",price);
-            document.getElementById("tag").innerText = "$"+price
+            document.getElementById("tag").innerText = "$"+numberWithCommas(price)
             localStorage.setItem("price_room",price);
 			
-			document.getElementById("tag2").innerText = "$"+price
+			document.getElementById("tag2").innerText = "$"+numberWithCommas(price)
             localStorage.setItem("price_room",price);
 
-			document.getElementById("tag3").innerText = "$"+price
+			document.getElementById("tag3").innerText = "$"+numberWithCommas(price)
             localStorage.setItem("price_room",price);
 
-			document.getElementById("tag4").innerText = "$"+price
+			document.getElementById("tag4").innerText = "$"+numberWithCommas(price)
             localStorage.setItem("price_room",price);
 
-			document.getElementById("tag5").innerText = "$"+price
+			document.getElementById("tag5").innerText = "$"+numberWithCommas(price)
             localStorage.setItem("price_room",price);
 			
 		}
