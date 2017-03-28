@@ -1,0 +1,265 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<title>RAYVA</title>
+<link href="css/style.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="js/basic.js"></script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
+<script type="text/javascript" src="html2canvas.js"></script>
+<script type="text/javascript">
+function codeAddress() {
+
+			var price = localStorage.getItem("price_acc");
+            console.log("price_",price);
+            document.getElementById("price_tag").innerText = "$"+price
+
+            var saved = localStorage.getItem("package")
+           console.log(saved)
+           document.getElementById("package").innerHTML = saved;
+
+           var saved2 = localStorage.getItem("room_size")
+           console.log(saved2)
+           // var upper = saved2.toUpperCase();
+           document.getElementById("size").innerHTML = saved2 ;
+
+           var avreceiver = localStorage.getItem("avreceiver")
+           console.log(avreceiver)
+           // var upper2 = avreceiver.toUpperCase();
+           document.getElementById("avreceiver").innerHTML = avreceiver ;
+
+           var speakerpackage = localStorage.getItem("speakerpackage")
+           console.log(speakerpackage)
+           // var upper3 = speakerpackage.toUpperCase();
+           document.getElementById("speakerpackage").innerHTML = speakerpackage ;
+
+           var avreceiver_last = localStorage.getItem("avreceiver_last")
+           console.log(avreceiver_last)
+           // var upper3 = avreceiver_last.toUpperCase();
+           document.getElementById("avreceiver_last").innerHTML = avreceiver_last ;
+
+           var Projector = localStorage.getItem("Projector")
+           console.log(Projector)
+           // var upper4 = Projector.toUpperCase();
+           document.getElementById("Projector").innerHTML = Projector ;
+
+            var Screen = localStorage.getItem("Screen")
+           console.log(Screen)
+           // var upper5 = Screen.toUpperCase();
+           document.getElementById("Screen").innerHTML = Screen ;
+
+           var Projector_mounto = localStorage.getItem("Projector_mount")
+           console.log(Projector_mounto)
+           // var upper6 = Projector_mounto.toUpperCase();
+           document.getElementById("Projector_mount").innerHTML = Projector_mounto ;
+
+           var Control_Package = localStorage.getItem("Control_Package")
+           console.log(Control_Package)
+           // var upper7 = Control_Package.toUpperCase();
+           document.getElementById("Control_Package").innerHTML = Control_Package ;
+
+           var Lighting_Track = localStorage.getItem("Lighting_Track")
+           console.log(Lighting_Track)
+           // var upper8 = Lighting_Track.toUpperCase();
+           document.getElementById("Control_Package").innerHTML = Lighting_Track ;
+
+           var Light_Bulbs = localStorage.getItem("Light_Bulbs")
+           console.log(Light_Bulbs)
+           //var upper9 = Light_Bulbs.toUpperCase();
+           document.getElementById("Light_Bulbs").innerHTML = Light_Bulbs ;
+
+           var Power_Protection = localStorage.getItem("Power_Protection")
+           console.log(Power_Protection)
+           // var upper10 = Power_Protection.toUpperCase();
+           document.getElementById("Power_Protection").innerHTML = Power_Protection ;
+
+           var AV_Rack = localStorage.getItem("AV_Rack")
+           console.log(AV_Rack)
+           // var upper11 = AV_Rack.toUpperCase();
+           document.getElementById("AV_Rack").innerHTML = AV_Rack ;
+
+           var Playback = localStorage.getItem("Playback")
+           console.log(Playback)
+           // var upper12 = Playback.toUpperCase();
+           document.getElementById("Playback").innerHTML = Playback ;
+
+           var name = localStorage.getItem("name")
+           console.log(name)
+           // var upper13 = name.toUpperCase();
+           document.getElementById("name").innerHTML = name ;
+
+           var contact = localStorage.getItem("contact")
+           console.log(contact)
+           document.getElementById("contact").innerHTML = contact ;
+
+           var email = localStorage.getItem("email")
+           console.log(email)
+           document.getElementById("email").innerHTML = email ;
+
+           var street = localStorage.getItem("street")
+           console.log(street)
+           document.getElementById("street").innerHTML = street ;
+
+           var city = localStorage.getItem("city")
+           console.log(city)
+           document.getElementById("city").innerHTML = city ;
+
+           var state = localStorage.getItem("state")
+           console.log(state)
+           document.getElementById("state").innerHTML = state ;
+
+           var zip = localStorage.getItem("zip")
+           console.log(zip)
+           document.getElementById("zip").innerHTML = zip ;
+
+           
+        }
+        window.onload = codeAddress;
+        var specialElementHandlers = {'#editor': function (element, renderer) {
+        return true;}};
+
+        function Print() {
+            var doc = new jsPDF();
+            doc.fromHTML($('html').html(), 15, 15, { 'width': 700,'elementHandlers': specialElementHandlers});
+            doc.save('sample-content.pdf');
+            location.href="share.html"
+        }
+
+
+        function take_screenshot()
+			{
+ 				html2canvas(document.body, {  
+  				onrendered: function(canvas)  
+  					{
+    						var img = canvas.toDataURL();
+  					}
+ 				});
+		}
+         </script>
+
+</head>
+
+<body class="content">
+<div class="maincontainer">
+  <div class="main">
+    <div class="theme-bg football">
+      <div class="themetop">
+      	<div class="back"><a href="order.html"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></div>
+        <div class="logo">
+          <img src="images/logo.png" alt="">
+        </div>
+      </div>
+      <div class="theme-heading">Order Review</div>
+      <!-- Swiper -->
+      <div class="order-review">
+			<ul class="list list1">
+            	<li>
+                	
+                	<div class="heading"><span>Theme</span><div class="icon"><img src="images/theme.png" alt=""></div><div id="theme">FOOTBALL</div></div>
+                </li>
+                
+                <li>
+                	
+                	<div class="heading"><span>Package</span><div class="icon"><img src="images/package.png" alt=""></div><div id="package">GOLD</div></div>
+                </li>
+                
+                <li>
+                	
+                	<div class="heading"><span>Size</span><div class="icon"><img src="images/size.png" alt=""></div><div id="size">MEDIUM LONG</div></div>
+                </li> 
+                <div class="clear"></div>   
+            </ul> 
+            <div class="clear"></div>
+            <ul class="list">
+            	<li>
+                	
+                	<div class="heading">
+                    	<div class="icon"><img src="images/audio.png" alt=""></div>
+                        AUDIO
+                    </div>
+                    <div class="name"><span>Audio Visual Receiver</span><div id="avreceiver">Marantz SR6011</div></div>
+                    <div class="name"><span>Speaker Package</span><div id="speakerpackage">KEF</div></div>
+                    <div class="name"><span>Speaker Wire</span><div id="avreceiver_last">Future Ready</div></div>
+                    
+                </li>
+                <li>
+                	<div class="heading">
+                    	<div class="icon"><img src="images/video.png" alt=""></div>
+                        VIDEO
+                    </div>
+                    <div class="name"><span>Projector</span><div id="Projector">Sony VPLHW65ES 1080p 3D SXRD</div></div>
+                    <div class="name"><span>Screen</span><div id="Screen">Vutec 11' wide 2.4:1 aspect screen</div></div>
+                    <div class="name"><span>Projector Mount</span><div id="Projector_mount">Chief RPM AU </div></div>
+                </li>
+                <li>
+                	<div class="heading">
+                    	<div class="icon"><img src="images/others.png" alt=""></div>
+                        others
+                    </div>
+                    <div class="name"><span>Control Package</span><div id="Control_Package">Savant</div></div> 
+                    <div class="name"><span>Lighting</span><div id="Lighting_Track">Jesco Lighting Group</div></div>
+                    <div class="name"><span>Light Bulbs</span><div id="Light_Bulbs">Jesco Lighting Group</div></div>
+                    <div class="name"><span>Power Protection</span><div id="Power_Protection">Chief RPM AU </div></div>
+                </li>
+                <li>
+                	<div class="heading">
+                    	<div class="icon"><img src="images/accessories.png" alt=""></div>
+                        Accessories
+                    </div>
+                    <div class="name"><span>Audio Visual Rack</span><div id="AV_Rack">Mid-Atlantic</div></div>
+                    <div class="name"><span>Mid-Atlantic</span><div id="Playback">Kaleidescape Alto</div></div>
+                   
+                </li>
+                 <div class="clear"></div>
+            </ul>
+            <div class="clear"></div>
+            <ul class="list">
+            	<li>
+                    <div class="name"><span>Name</span><div id="name">Johndoe|</div></div>
+                </li>
+                <li>
+                    <div class="name"><span>Contact Number</span><div id="contact">+ 01 889966644</div></div>
+                </li>
+                <li>
+                    <div class="name"><span>E-mail</span><div id="email">johndoe@gmail.com</div></div>
+                </li>
+                
+                <li>
+                    <div class="name"><span>Street name</span><div id="street">221B Baker Street</div></div>
+                </li>
+                <div class="clear"></div>
+                <li>
+                    <div class="name"><span>City</span><div id="city">Washington</div></div>
+                </li>
+                <li>
+                    <div class="name"><span>State</span><div id="state">Sample</div></div>
+                </li>
+                <li>
+                    <div class="name"><span>Zipcode</span><div id="zip">090021</div></div>
+                </li>
+                <li>
+                    <div class="name"><span>Country</span>United State of America</div>
+                </li>
+                 <div class="clear"></div>
+            </ul>
+            <div class="clear"></div>
+            <div class="control-footer">
+      		<div class="price">Total price of Package: Gold<span><div id="price_tag">$78,000</div></span></div>
+            <!-- <div class="theme-btn"><a href="share.html" class="btn">Next</a></div> -->
+             <div class="theme-btn" onclick="javascript:Print();"><a href="" class="btn">Next</a></div>
+            </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

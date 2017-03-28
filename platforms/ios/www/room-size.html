@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<title>RAYVA</title>
+<link href="css/style.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="js/basic.js"></script>
+<script type="text/javascript">
+        function codeAddress() {
+            var saved = localStorage.getItem("package_id_roomsize");
+           
+           console.log(saved)
+        $('ul.package li').each(function() {
+                if($(this).attr("data-tab") == saved){
+                    console.log("got the right li "+this);
+                    $(this).click();
+                }
+        })
+        }
+        window.onload = codeAddress;
+        </script>
+</head>
+
+<body>
+<!--------------------POP Up-------------------->
+<div class="pop-bg"></div>
+<div class="pop-up" id="popup">
+  <div id="close">X</div>
+  <div id="content-wrap"></div>
+  <div class="clear"></div>
+</div>
+<!--------------------End Pop Up-------------------->
+<div class="maincontainer">
+  <div class="main">
+    <div class="package-bg football">
+      <div class="themetop">
+      	<div class="back"><a href="package.html"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></div>
+        <div class="logo">
+          <img src="images/logo.png" alt="">
+        </div>
+      </div>
+      <div class="theme-heading">Select theater floor plan closest to your room size</div>
+      <!-- Swiper -->
+      <div class="package-left" id="room_size">
+      	<ul class="package">
+        	<li class="" data-tab="tab1"><div>Small</div></li>
+            <li data-tab="tab2"><div>Medium Short</div></li>
+            <li data-tab="tab3" class="active"><div>Medium Long</div></li>
+            <li data-tab="tab4"><div>Large short</div></li>
+            <li data-tab="tab5"><div>large long</div></li>
+        </ul>
+      </div>
+      <div class="package-right">
+      		<div class="tab-package"><div class="blank">Select theater floor<br>plan closest<br>
+to your room size</div></div>
+            <div class="tab-package "  id="tab1">
+            	<div class="img-box"><a href="javascript:void(0);" data-href="images/small.jpg" class="pop-image" ><img src="images/small.jpg" alt=""></a></div>
+                <div class="clear"></div>
+                <div class="left-box">
+                	<ul>
+                    	<li>Lorem Ipsum is simply dummy text of the printing and</li>
+                        <li>typesetting industry. Lorem Ipsum has been the</li>
+                        <li>industry's standard dummy text ever since the 1500s</li>
+                        <li>Lorem Ipsum is simply dummy text of the printing and</li>
+                        <li>typesetting industry. Lorem Ipsum has been the</li>
+                    </ul>
+                </div>
+                <div class="right-box">
+                	13'6" X 16'6" X 8' MAX<br>
+                    3 SEATS
+                </div>
+                
+                <div class="clear"></div>
+                
+                <div class="price">Total price of Package: Gold<span>$78,000</span></div>
+                 <div class="clear"></div>
+                <div class="theme-btn"><a href="audio.html" class="btn">Next</a></div>
+            </div>
+            <div class="tab-package "  id="tab2">
+            	<div class="img-box"><a href="javascript:void(0);" data-href="images/medium.jpg" class="pop-image" ><img src="images/medium.jpg" alt=""></a></div>
+                <div class="clear"></div>
+                <div class="left-box">
+                	<ul>
+                    	<li>Lorem Ipsum is simply dummy text of the printing and</li>
+                        <li>typesetting industry. Lorem Ipsum has been the</li>
+                        <li>industry's standard dummy text ever since the 1500s</li>
+                        <li>Lorem Ipsum is simply dummy text of the printing and</li>
+                        <li>typesetting industry. Lorem Ipsum has been the</li>
+                    </ul>
+                </div>
+                <div class="right-box">
+                	14' X 18'6" X 8' MAX<br>
+                    6 SEATS
+                </div>
+                
+                <div class="clear"></div>
+                
+                <div class="price">Total price of Package: Gold<span>$78,000</span></div>
+                 <div class="clear"></div>
+                <div class="theme-btn"><a href="audio.html" class="btn">Next</a></div>
+            </div>
+      		<div class="tab-package active"  id="tab3">
+            	<div class="img-box"><a href="javascript:void(0);" data-href="images/medium1.jpg" class="pop-image" ><img src="images/medium1.jpg" alt=""></a></div>
+                <div class="clear"></div>
+                <div class="left-box">
+                	<ul>
+                    	<li>Lorem Ipsum is simply dummy text of the printing and</li>
+                        <li>typesetting industry. Lorem Ipsum has been the</li>
+                        <li>industry's standard dummy text ever since the 1500s</li>
+                        <li>Lorem Ipsum is simply dummy text of the printing and</li>
+                        <li>typesetting industry. Lorem Ipsum has been the</li>
+                    </ul>
+                </div>
+                <div class="right-box">
+                	14' X 22' X 8' MAX<br>
+                    6 SEATS
+                </div>
+                
+                <div class="clear"></div>
+                
+                <div class="price">Total price of Package: Gold<span>$78,000</span></div>
+                 <div class="clear"></div>
+                <div class="theme-btn"><a href="audio.html" class="btn">Next</a></div>
+            </div>
+            <div class="tab-package "  id="tab4">
+            	<div class="img-box"><a href="javascript:void(0);" data-href="images/large.jpg" class="pop-image" ><img src="images/large.jpg" alt=""></a></div>
+                <div class="clear"></div>
+                <div class="left-box">
+                	<ul>
+                    	<li>Lorem Ipsum is simply dummy text of the printing and</li>
+                        <li>typesetting industry. Lorem Ipsum has been the</li>
+                        <li>industry's standard dummy text ever since the 1500s</li>
+                        <li>Lorem Ipsum is simply dummy text of the printing and</li>
+                        <li>typesetting industry. Lorem Ipsum has been the</li>
+                    </ul>
+                </div>
+                <div class="right-box">
+                	18' X 22' X 9' MAX<br>
+                    8 SEATS
+                </div>
+                
+                <div class="clear"></div>
+                
+                <div class="price">Total price of Package: Gold<span>$78,000</span></div>
+                 <div class="clear"></div>
+                <div class="theme-btn"><a href="audio.html" class="btn">Next</a></div>
+            </div>
+            <div class="tab-package "  id="tab5">
+            	<div class="img-box"><a href="javascript:void(0);" data-href="images/large1.jpg" class="pop-image" ><img src="images/large1.jpg" alt=""></a></div>
+                <div class="clear"></div>
+                <div class="left-box">
+                	<ul>
+                    	<li>Lorem Ipsum is simply dummy text of the printing and</li>
+                        <li>typesetting industry. Lorem Ipsum has been the</li>
+                        <li>industry's standard dummy text ever since the 1500s</li>
+                        <li>Lorem Ipsum is simply dummy text of the printing and</li>
+                        <li>typesetting industry. Lorem Ipsum has been the</li>
+                    </ul>
+                </div>
+                <div class="right-box">
+                	18' X 26' X 9' MAX<br>
+                    8 SEATS
+                </div>
+                
+                <div class="clear"></div>
+                
+                <div class="price">Total price of Package: Gold<span id="tag">$78,000</span></div>
+                 <div class="clear"></div>
+                <div class="theme-btn"><a href="audio.html" class="btn">Next</a></div>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

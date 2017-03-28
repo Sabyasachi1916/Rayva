@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<title>RAYVA</title>
+<link href="css/style.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="js/basic.js"></script>
+<script type="text/javascript">
+  function actionSearch() {
+           console.log("fired ");
+
+           var name = document.getElementById('name').value;
+           if (name.value=="") {
+                alert("Please enter your name");
+                return false
+           }else{
+            localStorage.setItem("name",name)
+           }
+
+           var contact = document.getElementById('contact').value;
+            if (/^\d{10}$/.test(contact)) {
+              localStorage.setItem("contact",contact);
+              
+            } else {
+                alert("Invalid number. Must be ten digits");
+                return false;
+              }
+          var email = document.getElementById('email').value;
+          var reg = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            if (reg.test(email) == false) 
+              {
+                alert('Invalid Email Address');
+                return false;
+              }else{
+                localStorage.setItem("email",email)
+               
+              }
+              
+            
+            var street = document.getElementById('street').value;
+            if (street.value=="") {
+                alert("Please enter your street name");
+                return false
+            }else{
+                localStorage.setItem("street",street)
+                
+              }
+            
+             var city = document.getElementById('city').value;
+              if (city.value=="") {
+                alert("Please enter your city name");
+                return false
+              }else{
+                localStorage.setItem("city",city)
+                
+              }
+
+              var state = document.getElementById('state').value;
+              if (state.value=="") {
+                alert("Please enter your state name");
+                return false
+              }else{
+                localStorage.setItem("state",state)
+                
+              }
+
+              var zip = document.getElementById('zip').value;
+              var isValidZip = /(^\d{5}$)/.test(zip);
+              if (!isValidZip) {
+                alert("Please enter valid zip code");
+                return false
+              }else{
+                localStorage.setItem("zip",zip)
+              }
+              location.href="order-review.html"
+
+        }
+</script>
+</head>
+
+<body>
+<div class="maincontainer">
+  <div class="main">
+    <div class="theme-bg football">
+      <div class="themetop">
+      	<div class="back"><a href="audio.html"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></div>
+        <div class="logo">
+          <img src="images/logo.png" alt="">
+        </div>
+      </div>
+      <div class="theme-heading">Contact details</div>
+      <!-- Swiper -->
+      <div class="contact-form">
+            <form>
+                	<div class="material ">
+                      <input required="" title="" value="" type="text" id="name" required>
+                      <span class="bar"></span>
+                      <label for="Last Name">USER NAME</label>
+                    </div>
+                    <div class="material ">
+                      <input required="" title="" value="" type="text" id="contact" required>
+                      <span class="bar"></span>
+                      <label for="Last Name">CONTACT NUMBER</label>
+                    </div>
+                    <div class="material ">
+                      <input required="" title="" value="" type="email" id="email" required>
+                      <span class="bar"></span>
+                      <label for="Last Name">E-MAIL</label>
+                    </div>
+                    <div class="material ">
+                      <input required="" title="" value="" type="text" id="street">
+                      <span class="bar"></span>
+                      <label for="Last Name">STREET NAME</label>
+                    </div>
+                    <div class="material ">
+                      <input required="" title="" value="" type="text" id="city">
+                      <span class="bar"></span>
+                      <label for="Last Name">CITY</label>
+                    </div>
+                    
+                    <div class="material ">
+                      <input required="" title="" value="" type="text" id="state">
+                      <span class="bar"></span>
+                      <label for="Last Name">STATE</label>
+                    </div>
+                    
+                    <div class="material ">
+                      <input required="" title="" value="" type="text" id="zip">
+                      <span class="bar"></span>
+                      <label for="Last Name">ZIPCODE</label>
+                    </div>
+                    
+                    <div class="material ">
+                      <input required="" title="" value="United State Of America" type="text" id="country">
+                      <span class="bar"></span>
+                      <label for="Last Name">COUNTRY</label>
+                    </div>
+                    
+                    <div class="btn btn-block " onclick="javascript:actionSearch();">Done</div>
+                    <!-- <a href="order-review.html" class="btn btn-block ">Done</a> -->
+                    <!-- <div class="clear20" onclick="javascript:actionSearch();"></div> -->
+           </form>         
+        </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

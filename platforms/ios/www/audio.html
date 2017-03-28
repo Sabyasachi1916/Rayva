@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<title>RAYVA</title>
+<link href="css/style.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="js/basic.js"></script>
+<script type="text/javascript">
+//document.getElementById("_1234").checked = true;
+ function codeAddress() {
+            var price = localStorage.getItem("price_room");
+            console.log("price_",price);
+            document.getElementById("price_audio").innerText = "$"+price
+            localStorage.setItem("price_audio",price)
+            localStorage.setItem("upgraded","false")
+            localStorage.setItem("avreceiver","")
+            localStorage.setItem("speakerpackage","")
+            localStorage.setItem("avreceiver_last","")
+        }
+        window.onload = codeAddress;
+  function actionSearch(id) {
+           console.log("fired " + id);
+           var selectedValue = document.getElementById("span_"+id).innerText;
+           console.log(selectedValue)
+          if(id == "a1-1" || id == "a1-2" || id == "a1-3")
+          {
+                localStorage.setItem("avreceiver",selectedValue);
+                var up = localStorage.getItem("upgraded")
+                console.log("id here "+ up);
+                if (id == "a1-3")
+                {
+                   if (up == "false")
+                   {
+                    var price = localStorage.getItem("price_audio");
+                    var price2 = parseInt(price) + 500;
+                    console.log("price 1_"+ price2);
+                    localStorage.setItem("price_audio",price2);
+                    localStorage.setItem("upgraded","true");
+                    document.getElementById("price_audio").innerText = "$"+price2
+
+                   }
+                  
+                }
+                else{
+                if (up == "true")
+                {
+                    var price = localStorage.getItem("price_audio");
+                    var price2 = parseInt(price) - 500;
+                    console.log("price 2_"+ price2);
+                    localStorage.setItem("price_audio",price2);
+                    localStorage.setItem("upgraded","false");
+                    document.getElementById("price_audio").innerText = "$"+price2
+                  }
+                }
+                var pri = localStorage.getItem("price_audio")
+                 console.log("price_"+ pri);
+          }
+          if(id == "a2-1" || id == "a2-2"){
+                localStorage.setItem("speakerpackage",selectedValue)
+            }
+            if(id == "a3-1"){
+                localStorage.setItem("avreceiver_last",selectedValue)
+            }
+        }
+</script>
+</head>
+
+<body>
+<div class="maincontainer">
+  <div class="main">
+    <div class="package-bg audi">
+      <div class="themetop">
+      	<div class="back"><a href="room-size.html"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></div>
+        <div class="logo">
+          <img src="images/logo.png" alt="">
+        </div>
+      </div>
+      <div class="control-box">
+      	<ul class="control">
+        	<li class="active">
+            	<div class="img-icon"><img src="images/audio.png" alt=""></div>
+                Audio
+            </li>
+            <li>
+            <div class="img-icon"><img src="images/video.png" alt=""></div>
+                VIDEO
+            </li>
+            <li>
+            <div class="img-icon"><img src="images/others.png" alt=""></div>
+                OTHER
+            </li>
+            <li>
+            <div class="img-icon"><img src="images/accessories.png" alt=""></div>
+                Accessories
+            </li>
+        </ul>
+        <div class="clear"></div>
+      	<div class="theme-heading">please select your preferance</div>
+        <div class="clear"></div>
+        <div class="control-list-box">
+        	<ul class="control-list">
+            	<li>
+                	<div class="label">AV Receiver</div>
+                    <label class="checkbox" for="a1-1">
+                      <input onclick="javascript:actionSearch(id);" name="RadioGroup1" value="5" id="a1-1" type="radio">
+                      <span class="check-text" id="span_a1-1">Marantz SR6011</span>
+                    </label>
+                    <label class="checkbox" for="a1-2">
+                      <input onclick="javascript:actionSearch(id);" name="RadioGroup1" value="5" id="a1-2" type="radio">
+                      <span class="check-text" id="span_a1-2">Integra DRX-4</span>
+                    </label>
+                    <div class="other">Upgrade</div>
+                    <label class="checkbox" for="a1-3">
+                      <input onclick="javascript:actionSearch(id);" name="RadioGroup1" value="5" id="a1-3" type="radio">
+                      <span class="check-text" id="span_a1-3">Integra DRX-5</span>
+                      <span class="others-text">+$500</span>
+                    </label>
+                </li>
+                <li>
+                	<div class="label">Speaker Package</div>
+                    <label class="checkbox" for="a2-1">
+                      <input onclick="javascript:actionSearch(id);" name="RadioGroup2" value="5" id="a2-1" type="radio">
+                      <span class="check-text" id="span_a2-1">Triad 7.2 On Wall Bronze</span>
+                    </label>
+                    <label class="checkbox" for="a2-2">
+                      <input onclick="javascript:actionSearch(id);" name="RadioGroup2" value="5" id="a2-2" type="radio">
+                      <span class="check-text" id="span_a2-2">KEF Ci4100QL-THX 7.2</span>
+                    </label>
+
+                </li>
+                <li>
+                	<div class="label">Speaker Cables</div>
+                    <label class="checkbox" for="a3-1">
+                      <input onclick="javascript:actionSearch(id);" name="RadioGroup3" value="5" id="a3-1" type="radio">
+                      <span class="check-text" id="span_a3-1">Liberty 14-2C</span>
+                    </label>                  
+                </li>	
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <!-- Swiper -->
+      <div class="control-footer">
+      		<div class="price">Total price of Package: Gold<span><div id="price_audio">$78,000</div></span></div>
+
+   		 <div class="theme-btn"><a href="video.html" class="btn">Next</a></div>
+    	</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

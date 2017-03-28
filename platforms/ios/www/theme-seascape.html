@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<title>RAYVA</title>
+<!-- Link Swiper's CSS -->
+<link rel="stylesheet" href="css/swiper.css">
+<link href="css/style.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="js/basic.js"></script>
+<script type="text/javascript">
+        function codeAddress() {
+            if(localStorage.getItem("theme")=="Seascape"){
+            	console.log(localStorage.getItem("theme"); 
+            }
+        }
+        window.onload = codeAddress;
+        </script>
+</head>
+
+<body>
+  		<!--------------------POP Up-------------------->
+<div class="pop-bg"></div>
+<div class="pop-up" id="popup">
+  <div id="close">X</div>
+  <div id="content-wrap"></div>
+  <div class="clear"></div>
+</div>
+<!--------------------End Pop Up-------------------->
+
+<div class="maincontainer">
+  <div class="main">
+    <div class="theme-bg seascape">
+      <div class="themetop">
+      <div class="back"><a href="theme.html"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></div>
+        <div class="logo">
+          <img src="images/logo.png" alt="">
+        </div>
+      </div>
+      <div class="theme-name"><a href="theme.html">seascape</a></div>
+      <div class="theme-heading">Images of competition capture drama and action</div>
+      <!-- Swiper -->
+      <div class="sub-theme">
+      
+        <div id="example">
+        <carousel-3d :width="500" :height="280">
+        <slide v-for="(slide, i) in slides" :index="0">
+          <a href="javascript:void(0);" data-href="images/seascape/seascape1.jpg" class="pop-image" ><img src="images/seascape/seascape1.jpg"></a>
+        </slide>
+        <slide v-for="(slide, i) in slides" :index="1">
+          <a href="javascript:void(0);" data-href="images/seascape/seascape2.jpg" class="pop-image" ><img src="images/seascape/seascape2.jpg"></a>
+        </slide>
+        <slide v-for="(slide, i) in slides" :index="2">
+          <a href="javascript:void(0);" data-href="images/seascape/seascape3.jpg" class="pop-image" ><img src="images/seascape/seascape3.jpg"></a>
+        </slide>
+        </carousel-3d>
+        </div>
+
+      </div>
+     
+    </div>
+  </div>
+</div>
+<!-- Swiper JS -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.7/vue.js"></script>
+
+<script type="text/javascript" src="https://rawgit.com/Wlada/vue-carousel-3d/master/dist/vue-carousel-3d.min.js"></script>
+
+
+<!-- Initialize Swiper -->
+<script type="text/javascript">//<![CDATA[
+window.onload=function(){
+new Vue({
+  el: '#example',
+  data: {
+    slides: 1
+  },
+  components: {
+    'carousel-3d': Carousel3d.Carousel3d,
+    'slide': Carousel3d.Slide
+  }
+})
+
+}//]]> 
+
+</script>
+</body>
+</html>

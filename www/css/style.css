@@ -241,7 +241,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#94007d85', e
  .pop-up img{width:auto; height:auto; max-height:100%; max-width:100%; }
 
 #close{position:absolute; left:calc(50% - 15px); bottom:20px; width:50px; height:50px; border-radius:50%; background:#555; color:#fff;cursor:pointer;z-index:200;text-align:center;padding:17px}
-
+.pop-image-next,.pop-image-prev{position:absolute; color:#fff; width:30px; height:50px;top:calc(50% - 15px); right:15px; display:block; cursor:pointer;}
+.pop-image-next:before,.pop-image-prev:before{display:block;width:100%; height:100%;font-family:'FontAwesome'; font-size:40px; line-height:50px;content:'\f054'; text-shadow:rgba(0,0,0,.7) 0 2px 2px;}
+.pop-image-prev{right:auto; left:15px;}
+.pop-image-prev:before{content:'\f053 '}
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~End Pop Up Part ~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .carousel-3d-slide{border-radius:5px !important;     pointer-events: none;}
 .carousel-3d-slide.current{box-shadow:rgba(0,0,0,.4) 0 0 20px !important;    pointer-events:auto; }

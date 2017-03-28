@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<title>RAYVA</title>
+<link href="css/style.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="js/basic.js"></script>
+<script type="text/javascript">
+//document.getElementById("_1234").checked = true;
+ function codeAddress() {
+            var price = localStorage.getItem("price_video");
+            console.log("price_",price);
+            document.getElementById("price_tag").innerText = "$"+price
+            localStorage.setItem("price_other",price)
+            localStorage.setItem("Control_Package","")
+            localStorage.setItem("Lighting_Track","")
+            localStorage.setItem("Light_Bulbs","")
+            localStorage.setItem("Power_Protection","")
+        }
+        window.onload = codeAddress;
+  function actionSearch(id) {
+           console.log("fired " + id);
+           var selectedValue = document.getElementById("span-"+id).innerText;
+           console.log(selectedValue)
+          if(id == "o1-1" || id == "o1-2" || id == "o1-3"){
+                localStorage.setItem("Control_Package",selectedValue)
+            }
+          if(id == "o2-1" || id == "o2-2"){
+                localStorage.setItem("Lighting_Track",selectedValue)
+            }
+            if(id == "o3-1"){
+                localStorage.setItem("Light_Bulbs",selectedValue)
+            }
+            if(id == "o4-1"){
+                localStorage.setItem("Power_Protection",selectedValue)
+            }
+        }
+</script>
+</head>
+
+<body>
+<div class="maincontainer">
+  <div class="main">
+    <div class="package-bg others">
+      <div class="themetop">
+      	<div class="back"><a href="video.html"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></div>
+        <div class="logo">
+          <img src="images/logo.png" alt="">
+        </div>
+      </div>
+      <div class="control-box">
+      	<ul class="control">
+        	<li>
+            	<div class="img-icon"><img src="images/audio.png" alt=""></div>
+                Audio
+            </li>
+            <li>
+            <div class="img-icon"><img src="images/video.png" alt=""></div>
+                VIDEO
+            </li>
+            <li class="active">
+            <div class="img-icon"><img src="images/others.png" alt=""></div>
+                OTHER
+            </li>
+            <li>
+            <div class="img-icon"><img src="images/accessories.png" alt=""></div>
+                Accessories
+            </li>
+        </ul>
+        <div class="clear"></div>
+      	<div class="theme-heading">please select your preferance</div>
+        <div class="clear"></div>
+        <div class="control-list-box ot">
+        	<ul class="control-list">
+            	<li>
+                	<div class="label">Control Package</div>
+                    <label class="checkbox" for="o1-1">
+                      <input onclick="javascript:actionSearch(id);" name="RadioGroup1" value="5" id="o1-1" type="radio">
+                      <span class="check-text" id="span-o1-1">Elan GXP12</span>
+                    </label>
+                    <label class="checkbox" for="o1-2">
+                      <input onclick="javascript:actionSearch(id);" name="RadioGroup1" value="5" id="o1-2" type="radio">
+                      <span class="check-text" id="span-o1-2">Savant</span>
+                    </label>
+                    <label class="checkbox" for="o1-3">
+                      <input onclick="javascript:actionSearch(id);" name="RadioGroup1" value="5" id="o1-3" type="radio">
+                      <span class="check-text" id="span-o1-3">Creston</span>
+                    </label>
+                </li>
+                <li>
+                	<div class="label">Lighting Track</div>
+                    <label class="checkbox" for="o2-1">
+                      <input onclick="javascript:actionSearch(id);" name="RadioGroup2" value="5" id="o2-1" type="radio">
+                      <span class="check-text" id="span-o2-1">Jesco Lighting Group</span>
+                    </label>
+                </li>
+                <li>
+                	<div class="label">Light Bulbs</div>
+                    <label class="checkbox" for="o3-1">
+                      <input onclick="javascript:actionSearch(id);" name="RadioGroup3" value="5" id="o3-1" type="radio">
+                      <span class="check-text"  id="span-o3-1">Jesco Lighting Group</span>
+                    </label>                  
+                </li>
+                <li>
+                	<div class="label">Power Protection</div>
+                    <label class="checkbox" for="o4-1">
+                      <input onclick="javascript:actionSearch(id);" name="RadioGroup4" value="5" id="o4-1" type="radio">
+                      <span class="check-text" id="span-o4-1">Torus</span>
+                    </label>                  
+                </li>	
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <!-- Swiper -->
+      <div class="control-footer">
+      		<div class="price">Total price of Package: Gold<span><div id="price_tag">$78,000</div></span></div>
+
+   		 <div class="theme-btn"><a href="accessories.html" class="btn">Next</a></div>
+    	</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

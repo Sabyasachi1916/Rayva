@@ -42,14 +42,34 @@ $( ".material input, .material select,.material textarea" ).focusout(function() 
 		$(".pop-bg").fadeOut(600);
 		$(".pop-up").fadeOut(200);
 		$("#content-wrap").html('');
-		
+		$("body").find('.carousel-3d-slider div').removeAttr('id');		
 	});
 
 	$("body").on("click",'.pop-image', function(){
 		//e.preventDefault();
 	//	alert(13);
 		var link = $(this).data('href');
-		$("#content-wrap").html('<img  src="'+link+'" alt="images">');
+		$(this).parent().attr('id', 'im-next');
+		var linkn = $('#im-next').next().children().data('href');
+		var linkp = $('#im-next').prev().children().data('href');
+		
+		
+		//$("#content-wrap").html('<img  src="'+link+'" alt="images">');
+		
+		
+		if (linkn === undefined) {
+			if (linkp === undefined) {
+       			$("#content-wrap").html('<img  src="'+link+'" alt="images">');
+			} else {
+				$("#content-wrap").html('<img  src="'+link+'" alt="images"><div class="pop-image-prev"></div>');
+			}
+		}else{
+			if (linkp === undefined) {
+       			$("#content-wrap").html('<img  src="'+link+'" alt="images"><div class="pop-image-next"></div>');
+			} else {
+				$("#content-wrap").html('<img  src="'+link+'" alt="images"><div class="pop-image-prev"></div><div class="pop-image-next"></div>');
+			}
+		}
 		
 		$("#content-wrap").fadeIn(400);
 		//Open Popup
@@ -59,6 +79,43 @@ $( ".material input, .material select,.material textarea" ).focusout(function() 
 		
 		return false;
     });
+	
+	
+	$("body").on("click",'.pop-image-next', function(){
+		//e.preventDefault();
+		var link = $('#im-next').next().children().data('href');
+		var linkn = $('#im-next').next().next().children().data('href');
+		$("body").find('#im-next').next().attr('id', 'im-next');
+		if (linkn === undefined) {
+       		$("#content-wrap").html('<img  src="'+link+'" alt="images"><div class="pop-image-prev"></div>');
+   		} else {
+        	$("#content-wrap").html('<img  src="'+link+'" alt="images"><div class="pop-image-prev"></div><div class="pop-image-next"></div>');
+    	}	
+		$("body").find('#im-next').removeAttr('id', 'im-next');
+		return false;
+    });
+	
+	
+	$("body").on("click",'.pop-image-prev', function(){
+		//e.preventDefault();
+		var link = $('#im-next').prev().children().data('href');
+		var linkp = $('#im-next').prev().prev().children().data('href');
+		
+		$("body").find('#im-next').prev().attr('id', 'im-prev');
+		$("body").find('#im-next').removeAttr('id', 'im-next');
+		$("body").find('#im-prev').attr('id', 'im-next');
+		$("body").find('#im-prev').removeAttr('id', 'im-prev');
+		//alert(link);
+		if (linkp === undefined) {
+       		$("#content-wrap").html('<img  src="'+link+'" alt="images"><div class="pop-image-next"></div>');
+   		} else {
+			$("#content-wrap").html('<img  src="'+link+'" alt="images"><div class="pop-image-prev"></div><div class="pop-image-next"></div>');
+    	}	
+		return false;
+    });
+	
+	
+	
 	
 	$("ul.package li").click(function () {    
 		console.log(localStorage.getItem("package"));    
@@ -97,9 +154,23 @@ $( ".material input, .material select,.material textarea" ).focusout(function() 
 			localStorage.setItem("room_size", $(".active div").get(0).innerHTML);
 			localStorage.setItem("package_id_roomsize",tab_id);
 			 var price = localStorage.getItem("price_package");
+
             console.log("price_",price);
             document.getElementById("tag").innerText = "$"+price
             localStorage.setItem("price_room",price);
+			
+			document.getElementById("tag2").innerText = "$"+price
+            localStorage.setItem("price_room",price);
+
+			document.getElementById("tag3").innerText = "$"+price
+            localStorage.setItem("price_room",price);
+
+			document.getElementById("tag4").innerText = "$"+price
+            localStorage.setItem("price_room",price);
+
+			document.getElementById("tag5").innerText = "$"+price
+            localStorage.setItem("price_room",price);
+			
 		}
 	});
 	
@@ -111,7 +182,9 @@ $( ".material input, .material select,.material textarea" ).focusout(function() 
 	
 	
 	
-	
+	window.getElementById("ac2-2").click();
+   
+
 	
 	
 	

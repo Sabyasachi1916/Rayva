@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
 <link rel="shortcut icon" href="images/favicon.ico">
@@ -14,6 +14,14 @@
 <link href="css/style.css" type="text/css" rel="stylesheet">
 <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
 <script type="text/javascript" src="js/basic.js"></script>
+<script type="text/javascript">
+        function codeAddress() {
+            if(localStorage.getItem("theme")=="Basket Ball"){
+            	console.log(localStorage.getItem("theme"); 
+            }
+        }
+        window.onload = codeAddress;
+        </script>
 </head>
 
 <body>
@@ -39,48 +47,48 @@
       <div class="theme-heading">Images of competition capture drama and action</div>
       <!-- Swiper -->
       <div class="sub-theme">
-      <div class="swiper-container">
-       
-        <div class="swiper-wrapper">
-          <div class="swiper-slide basketball">
-          	<a href="javascript:void(0);" data-href="images/basketball/basketball1.jpg" class="pop-image" >
-            <div class="img"  style="background-image:url(images/basketball/basketball1.jpg)"></div>
-            </a>
-          </div>
-          <div class="swiper-slide basketball">
-          	<a href="javascript:void(0);" data-href="images/basketball/basketball2.jpg" class="pop-image" >
-            <div class="img"  style="background-image:url(images/basketball/basketball2.jpg)"></div>
-            
-            </a>
-          </div>
-          <div class="swiper-slide seaspace">
-	        <a href="javascript:void(0);" data-href="images/basketball/basketball3.jpg" class="pop-image" >
-            <div class="img"  style="background-image:url(images/basketball/basketball3.jpg)"></div>
-            </a>
-          </div>
       
+        <div id="example">
+        <carousel-3d :width="500" :height="280">
+        <slide v-for="(slide, i) in slides" :index="0">
+          <a href="javascript:void(0);" data-href="images/basketball/basketball1.jpg" class="pop-image" ><img src="images/basketball/basketball1.jpg"></a>
+        </slide>
+        <slide v-for="(slide, i) in slides" :index="1">
+          <a href="javascript:void(0);" data-href="images/basketball/basketball2.jpg" class="pop-image" ><img src="images/basketball/basketball2.jpg"></a>
+        </slide>
+        <slide v-for="(slide, i) in slides" :index="2">
+          <a href="javascript:void(0);" data-href="images/basketball/basketball3.jpg" class="pop-image" ><img src="images/basketball/basketball3.jpg"></a>
+        </slide>
+        </carousel-3d>
         </div>
-        <!-- Add Pagination -->
-        
-      </div>
+
       </div>
      
     </div>
   </div>
 </div>
 <!-- Swiper JS -->
-<script src="js/swiper.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.7/vue.js"></script>
+
+<script type="text/javascript" src="https://rawgit.com/Wlada/vue-carousel-3d/master/dist/vue-carousel-3d.min.js"></script>
+
 
 <!-- Initialize Swiper -->
-<script>
-    var swiper = new Swiper('.swiper-container', {
-       
-        slidesPerView: 2,
-		centeredSlides: true,
-        paginationClickable: true,
-        spaceBetween:0,
-        freeMode: false
-    });
-    </script>
+<script type="text/javascript">//<![CDATA[
+window.onload=function(){
+new Vue({
+  el: '#example',
+  data: {
+    slides: 1
+  },
+  components: {
+    'carousel-3d': Carousel3d.Carousel3d,
+    'slide': Carousel3d.Slide
+  }
+})
+
+}//]]> 
+
+</script>
 </body>
 </html>
