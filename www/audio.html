@@ -14,10 +14,13 @@
 <script type="text/javascript" src="js/basic.js"></script>
 <script type="text/javascript">
 //document.getElementById("_1234").checked = true;
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
  function codeAddress() {
             var price = localStorage.getItem("price_room");
             console.log("price_",price);
-            document.getElementById("price_audio").innerText = "$"+price
+            document.getElementById("price_audio").innerText = "$"+numberWithCommas(price)
             localStorage.setItem("price_audio",price)
             localStorage.setItem("upgraded","false")
             localStorage.setItem("avreceiver","")
@@ -46,7 +49,7 @@
                     console.log("price 1_"+ price2);
                     localStorage.setItem("price_audio",price2);
                     localStorage.setItem("upgraded","true");
-                    document.getElementById("price_audio").innerText = "$"+price2
+                    document.getElementById("price_audio").innerText = "$"+numberWithCommas(price2)
 
                    }
                   
@@ -59,7 +62,7 @@
                     console.log("price 2_"+ price2);
                     localStorage.setItem("price_audio",price2);
                     localStorage.setItem("upgraded","false");
-                    document.getElementById("price_audio").innerText = "$"+price2
+                    document.getElementById("price_audio").innerText = "$"+numberWithCommas(price2)
                   }
                 }
                 var pri = localStorage.getItem("price_audio")
@@ -152,7 +155,7 @@
       </div>
       <!-- Swiper -->
       <div class="control-footer">
-      		<div class="price">Total price of Package: Gold<span><div id="price_audio">$78,000</div></span></div>
+      		<div class="price">Total price of Package: <span id="price_audio">$78,000</span></div>
 
    		 <div class="theme-btn"><a href="video.html" class="btn">Next</a></div>
     	</div>

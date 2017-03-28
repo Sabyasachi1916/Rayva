@@ -16,15 +16,20 @@
 //document.getElementById("_1234").checked = true;
  function codeAddress() {
             var price = localStorage.getItem("price_video");
-            console.log("price_",price);
+             console.log("price_",price);
+             console.log("I am in function");
             document.getElementById("price_tag").innerText = "$"+price
             localStorage.setItem("price_other",price)
-            localStorage.setItem("Control_Package","")
-            localStorage.setItem("Lighting_Track","")
-            localStorage.setItem("Light_Bulbs","")
-            localStorage.setItem("Power_Protection","")
+            localStorage.setItem("Control_Package","Elan GXP12")
+            localStorage.setItem("Lighting_Track","Jesco Lighting Group")
+            localStorage.setItem("Light_Bulbs","Jesco Lighting Group")
+            localStorage.setItem("Power_Protection","Torus")
+            actionSearch("o1-1");
+            actionSearch("o2-1");
+            actionSearch("o3-1");
+            actionSearch("o4-1");
         }
-        window.onload = codeAddress;
+        
   function actionSearch(id) {
            console.log("fired " + id);
            var selectedValue = document.getElementById("span-"+id).innerText;
@@ -42,6 +47,7 @@
                 localStorage.setItem("Power_Protection",selectedValue)
             }
         }
+	window.onload = codeAddress;
 </script>
 </head>
 
@@ -82,7 +88,7 @@
             	<li>
                 	<div class="label">Control Package</div>
                     <label class="checkbox" for="o1-1">
-                      <input onclick="javascript:actionSearch(id);" name="RadioGroup1" value="5" id="o1-1" type="radio">
+                      <input onclick="javascript:actionSearch(id);" name="RadioGroup1" value="5" id="o1-1" type="radio" checked>
                       <span class="check-text" id="span-o1-1">Elan GXP12</span>
                     </label>
                     <label class="checkbox" for="o1-2">
@@ -97,21 +103,21 @@
                 <li>
                 	<div class="label">Lighting Track</div>
                     <label class="checkbox" for="o2-1">
-                      <input onclick="javascript:actionSearch(id);" name="RadioGroup2" value="5" id="o2-1" type="radio">
+                      <input onclick="javascript:actionSearch(id);" name="RadioGroup2" value="5" id="o2-1" type="radio" checked>
                       <span class="check-text" id="span-o2-1">Jesco Lighting Group</span>
                     </label>
                 </li>
                 <li>
                 	<div class="label">Light Bulbs</div>
                     <label class="checkbox" for="o3-1">
-                      <input onclick="javascript:actionSearch(id);" name="RadioGroup3" value="5" id="o3-1" type="radio">
+                      <input onclick="javascript:actionSearch(id);" name="RadioGroup3" value="5" id="o3-1" type="radio" checked>
                       <span class="check-text"  id="span-o3-1">Jesco Lighting Group</span>
                     </label>                  
                 </li>
                 <li>
                 	<div class="label">Power Protection</div>
                     <label class="checkbox" for="o4-1">
-                      <input onclick="javascript:actionSearch(id);" name="RadioGroup4" value="5" id="o4-1" type="radio">
+                      <input onclick="javascript:actionSearch(id);" name="RadioGroup4" value="5" id="o4-1" type="radio" checked>
                       <span class="check-text" id="span-o4-1">Torus</span>
                     </label>                  
                 </li>	

@@ -14,11 +14,14 @@
 <script type="text/javascript" src="js/basic.js"></script>
 <script type="text/javascript">
 //document.getElementById("_1234").checked = true;
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
  function codeAddress() {
             var price = localStorage.getItem("price_video");
              console.log("price_",price);
              console.log("I am in function");
-            document.getElementById("price_tag").innerText = "$"+price
+            document.getElementById("price_tag").innerText = "$"+numberWithCommas(price)
             localStorage.setItem("price_other",price)
             localStorage.setItem("Control_Package","Elan GXP12")
             localStorage.setItem("Lighting_Track","Jesco Lighting Group")
@@ -128,7 +131,7 @@
       </div>
       <!-- Swiper -->
       <div class="control-footer">
-      		<div class="price">Total price of Package: Gold<span><div id="price_tag">$78,000</div></span></div>
+      		<div class="price">Total price of Package: <span id="price_tag">$78,000</span></div>
 
    		 <div class="theme-btn"><a href="accessories.html" class="btn">Next</a></div>
     	</div>

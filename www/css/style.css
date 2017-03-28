@@ -335,10 +335,10 @@ ul.control-list li .others-text{color: #DDD819; font-size:18px; }
 .order-review ul.list{position:relative;margin:30px 0;list-style:none;border-bottom: 1px solid rgba(3, 126, 132, 0.2); padding:0;}
 .order-review ul.list.list1 li{width:calc(100% / 3);}
 .order-review ul.list li{width:25%;float:left;color: #000000; padding:0 30px 	; margin:0; box-sizing:border-box;}
-.order-review ul.list li .heading{padding:0  0 20px 0;line-height: 35px;font-size: 22px; position:relative; font-weight:bold}
+.order-review ul.list li .heading{padding:0  0 20px 0;line-height: 35px;font-size: 22px; position:relative; font-weight:bold; text-transform:uppercase;}
 .order-review ul.list li .heading .icon{width:35px;height:35px; overflow:hidden; float:left;margin-right:20px;}
 .order-review ul.list li .heading .icon img{width:100%;margin-top:-35px;}
-.order-review ul.list li .heading span{font-size: 12px;line-height: 15px;font-family: 'gothamlight';margin-bottom:14px;float:left; margin-right:20px;margin-top:15px;}
+.order-review ul.list li .heading span{font-size: 12px;line-height: 15px;font-family: 'gothamlight';margin-bottom:14px;float:left; margin-right:20px;margin-top:15px;text-transform:capitalize;}
 .order-review ul.list li .name{font-size: 16px;font-weight: bold; font-family: 'gothamregular';line-height: 19px;margin-bottom:20px;}
 .order-review ul.list li .name span{font-size: 12px;line-height: 15px;font-family: 'gothamlight';margin-bottom:14px;display:block;}
 .order-review .control-footer{padding-top:10px;}
@@ -398,8 +398,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00929c', end
 	.control-footer .price{width:25%;text-align: right;padding-top: 0px;}
 	.control-footer .price span{display:inline-block}
 	.order-review {padding: 0 20px;}
-	.order-review ul.list{   ;margin:10px 0}
+	.order-review ul.list{   margin:10px 0}
+	.order-review ul.list li { padding: 0 10px;}
 	.order-review ul.list li .name span{margin-bottom: 4px;color:#666}
 	.order-review ul.list li .name{font-family: 'gothamlight';font-weight:bold;}
+	.order-review ul.list li .heading{font-size:18px;}
 
 }

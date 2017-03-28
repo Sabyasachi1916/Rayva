@@ -15,11 +15,14 @@
 <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
 <script type="text/javascript" src="html2canvas.js"></script>
 <script type="text/javascript">
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 function codeAddress() {
 
 			var price = localStorage.getItem("price_acc");
             console.log("price_",price);
-            document.getElementById("price_tag").innerText = "$"+price
+            document.getElementById("price_tag").innerText = "$"+numberWithCommas(price)
 
             var saved = localStorage.getItem("package")
            console.log(saved)
@@ -182,7 +185,7 @@ function codeAddress() {
                 	
                 	<div class="heading">
                     	<div class="icon"><img src="images/audio.png" alt=""></div>
-                        AUDIO
+                        Audio
                     </div>
                     <div class="name"><span>Audio Visual Receiver</span><div id="avreceiver">Marantz SR6011</div></div>
                     <div class="name"><span>Speaker Package</span><div id="speakerpackage">KEF</div></div>
@@ -192,7 +195,7 @@ function codeAddress() {
                 <li>
                 	<div class="heading">
                     	<div class="icon"><img src="images/video.png" alt=""></div>
-                        VIDEO
+                        Video
                     </div>
                     <div class="name"><span>Projector</span><div id="Projector">Sony VPLHW65ES 1080p 3D SXRD</div></div>
                     <div class="name"><span>Screen</span><div id="Screen">Vutec 11' wide 2.4:1 aspect screen</div></div>
@@ -201,7 +204,7 @@ function codeAddress() {
                 <li>
                 	<div class="heading">
                     	<div class="icon"><img src="images/others.png" alt=""></div>
-                        others
+                        Others
                     </div>
                     <div class="name"><span>Control Package</span><div id="Control_Package">Savant</div></div> 
                     <div class="name"><span>Lighting</span><div id="Lighting_Track">Jesco Lighting Group</div></div>
@@ -251,9 +254,9 @@ function codeAddress() {
             </ul>
             <div class="clear"></div>
             <div class="control-footer">
-      		<div class="price">Total price of Package: Gold<span><div id="price_tag">$78,000</div></span></div>
-            <!-- <div class="theme-btn"><a href="share.html" class="btn">Next</a></div> -->
-             <div class="theme-btn" onclick="javascript:Print();"><a href="" class="btn">Next</a></div>
+      		<div class="price">Total price of Package: <span id="price_tag">$78,000</span></div>
+            <div class="theme-btn"><a href="share.html" class="btn">Next</a></div>
+             <!-- <div class="theme-btn" onclick="javascript:Print();"><a href="" class="btn">Next</a></div> -->
             </div>
       </div>
       
