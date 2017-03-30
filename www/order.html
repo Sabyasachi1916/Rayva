@@ -19,17 +19,20 @@
            var name = document.getElementById('name').value;
            if (name.value=="") {
                 alert("Please enter your name");
+                document.getElementById('name').focus();
                 return false
            }else{
             localStorage.setItem("name",name)
            }
 
            var contact = document.getElementById('contact').value;
-            if (/^\d{10}$/.test(contact)) {
+            if (/^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/.test(contact)) {
               localStorage.setItem("contact",contact);
-              
+              document.getElementById('contact').style.color = 'black';
             } else {
                 alert("Invalid number. Must be ten digits");
+                document.getElementById('contact').focus();
+                document.getElementById('contact').style.color = 'red';
                 return false;
               }
           var email = document.getElementById('email').value;
@@ -37,9 +40,12 @@
             if (reg.test(email) == false) 
               {
                 alert('Invalid Email Address');
+                document.getElementById('email').focus();
+                document.getElementById('email').style.color = 'red';
                 return false;
               }else{
                 localStorage.setItem("email",email)
+                document.getElementById('email').style.color = 'black';
                
               }
               
@@ -47,6 +53,7 @@
             var street = document.getElementById('street').value;
             if (street.value=="") {
                 alert("Please enter your street name");
+                document.getElementById('street').focus();
                 return false
             }else{
                 localStorage.setItem("street",street)
@@ -56,6 +63,7 @@
              var city = document.getElementById('city').value;
               if (city.value=="") {
                 alert("Please enter your city name");
+                document.getElementById('city').focus();
                 return false
               }else{
                 localStorage.setItem("city",city)
@@ -65,6 +73,7 @@
               var state = document.getElementById('state').value;
               if (state.value=="") {
                 alert("Please enter your state name");
+                document.getElementById('state').focus();
                 return false
               }else{
                 localStorage.setItem("state",state)
@@ -75,9 +84,12 @@
               var isValidZip = /(^\d{5}$)/.test(zip);
               if (!isValidZip) {
                 alert("Please enter valid zip code");
+                document.getElementById('zip').focus();
+                document.getElementById('zip').style.color = 'red';
                 return false
               }else{
                 localStorage.setItem("zip",zip)
+                document.getElementById('zip').style.color = 'black';
               }
               location.href="order-review.html"
 
@@ -125,12 +137,80 @@
                       <label for="Last Name">CITY</label>
                     </div>
                     
-                    <div class="material ">
+                    <!-- <div class="material ">
                       <input required="" title="" value="" type="text" id="state">
                       <span class="bar"></span>
                       <label for="Last Name">STATE</label>
-                    </div>
+                    </div> -->
                     
+                    <div class="material ">
+                      <!--<input required="" title="" value="" type="text" id="state">-->
+                      <select id="state">
+                        <option></option>
+                        <option>Alabama</option>
+                        <option>Alaska</option>
+                        <option>American Samoa</option>
+                        <option>Arizona</option>
+                        <option>Arkansas</option>
+                        <option>California</option>
+                        <option>Colorado</option>
+                        <option>Connecticut</option>
+                        <option>Delaware</option>
+                        <option>District Of Columbia</option>
+                        <option>Federated States Of Micronesia</option>
+                        <option>Florida</option>
+                        <option>Georgia</option>
+                        <option>Guam</option>
+                        <option>Hawaii</option>
+                        <option>Idaho</option>
+                        <option>Illinois</option>
+                        <option>Indiana</option>
+                        <option>Iowa</option>
+                        <option>Kansas</option>
+                        <option>Kentucky</option>
+                        <option>Louisiana</option>
+                        <option>Maine</option>
+                        <option>Marshall Islands</option>
+                        <option>Maryland</option>
+                        <option>Massachusetts</option>
+                        <option>Michigan</option>
+                        <option>Minnesota</option>
+                        <option>Mississippi</option>
+                        <option>Missouri</option>
+                        <option>Montana</option>
+                        <option>Nebraska</option>
+                        <option>Nevada</option>
+                        <option>New Hampshire</option>
+                        <option>New Jersey</option>
+                        <option>New Mexico</option>
+                        <option>New York</option>
+                        <option>North Carolina</option>
+                        <option>North Dakota</option>
+                        <option>Northern Mariana Islands</option>
+                        <option>Ohio</option>
+                        <option>Oklahoma</option>
+                        <option>Oregon</option>
+                        <option>Palau</option>
+                        <option>Pennsylvania</option>
+                        <option>Puerto Rico</option>
+                        <option>Rhode Island</option>
+                        <option>South Carolina</option>
+                        <option>South Dakota</option>
+                        <option>Tennessee</option>
+                        <option>Texas</option>
+                        <option>Utah</option>
+                        <option>Vermont</option>
+                        <option>Virgin Islands</option>
+                        <option>Virginia</option>
+                        <option>Washington</option>
+                        <option>West Virginia</option>
+                        <option>Wisconsin</option>
+                        <option>Wyoming</option>
+                      </select>
+                      <span class="bar"></span>
+                      <label for="Last Name">STATE</label>
+                    </div>
+
                     <div class="material ">
                       <input required="" title="" value="" type="text" id="zip">
                       <span class="bar"></span>
@@ -138,7 +218,7 @@
                     </div>
                     
                     <div class="material ">
-                      <input required="" title="" value="United State Of America" type="text" id="country">
+                      <input required="" title="" value="United States Of America" type="text" id="country">
                       <span class="bar"></span>
                       <label for="Last Name">COUNTRY</label>
                     </div>

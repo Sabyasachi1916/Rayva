@@ -14,6 +14,61 @@
 <link href="css/style.css" type="text/css" rel="stylesheet">
 <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
 <script type="text/javascript" src="js/basic.js"></script>
+<script type="text/javascript">
+  function actionSearch(id) {
+    // console.log("child selected" );
+
+    var children = document.getElementById(id).childNodes;
+    //var doc = document.getElementById(id);
+   // var notes = null;
+   
+
+var priceEls = document.getElementsByClassName("slide-text");
+
+    for (var i = 0; i < children.length; i++) {
+      if (children[i].className=="swiper-pagination-bullet swiper-pagination-bullet-active"){
+        
+           if (i==0) {
+            console.log("child selected" + i);
+            localStorage.setItem("theme_selected","SEASCAPES");
+           }else{
+            if (i==1) {
+            console.log("child selected" + i);
+            localStorage.setItem("theme_selected","SEASCAPES");
+           }else{
+            if (i==2) {
+            console.log("child selected" + i);
+            localStorage.setItem("theme_selected","FOOTBALL");
+           }else{
+            if (i==3) {
+            console.log("child selected" + i);
+            localStorage.setItem("theme_selected","THEATER");
+           }else{
+            if (i==4) {
+            console.log("child selected" + i);
+            localStorage.setItem("theme_selected","BASKETBALL");
+           }else{
+            if (i==5) {
+            console.log("child selected" + i);
+            localStorage.setItem("theme_selected","BASEBALL");
+           }
+           }
+           }
+           }
+           }
+           }
+        console.log("child selected" + localStorage.getItem("theme_selected"));  
+      }        
+  }
+}
+
+function codeAddress() {
+            var price = localStorage.getItem("theme_selected");
+             console.log("child selected",price);
+             localStorage.setItem("theme_selected","BASEBALL");
+        }
+window.onload = codeAddress;
+</script>
 </head>
 
 <body>
@@ -28,7 +83,7 @@
       <div class="theme-heading">choose your design theme</div>
       <!-- Swiper -->
       <div class="swiper-container">
-        <div class="swiper-pagination"></div>
+        <div class="swiper-pagination" onclick="javascript:actionSearch(id);" id="scroller"></div>
         <div class="swiper-wrapper">
          
           <div class="swiper-slide baseball" id="baseball">

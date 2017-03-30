@@ -20,6 +20,10 @@ function numberWithCommas(x) {
 }
 function codeAddress() {
 
+var saved0 = localStorage.getItem("theme_selected")
+           console.log(saved0)
+           document.getElementById("theme").innerHTML = saved0;
+
 			var price = localStorage.getItem("price_acc");
             console.log("price_",price);
             document.getElementById("price_tag").innerText = "$"+numberWithCommas(price)

@@ -79,7 +79,7 @@ select option{padding:0 5px;}
 .login-form .material { margin:10px 0 40px 0;}
 .material  + .btn{margin-top:40px;}
 .material img{width:100%}
-.material  input,.material  textarea{border:none;padding:10px 90px 10px 10px;width:100% !important; resize:none; background:none; color:#000; display:block;font-size: 18px;line-height: 34px; box-shadow:none;-moz-box-shadow:none;-webkit-box-shadow:none;  box-sizing:border-box; -webkit-box-sizing:border-box; margin:0}
+.material  input,.material  select,.material  textarea{border:none;padding:10px 90px 10px 10px;width:100% !important; resize:none; background:none; color:#000; display:block;font-size: 18px;line-height: 34px; box-shadow:none;-moz-box-shadow:none;-webkit-box-shadow:none;  box-sizing:border-box; -webkit-box-sizing:border-box; margin:0}
 .material  label {position:absolute;height:100%;width:150px; top:0px;left:0px;text-align:left; font-size:18px;color:rgba(0,0,0,.5);pointer-events: none; transistion: 0.3s all;  -webkit-transition:0.3s  all;-moz-transition:0.3s  all; margin:0;padding:0 15px; line-height:54px;}
 .material .bar {position:relative;width:100%;display:block;}
 
@@ -355,7 +355,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00929c', end
 .share ul li .icon{width:100px; height:100px;overflow:hidden; margin:40px auto;}
 .share ul li:hover .icon img,.share ul li.active .icon img,.share ul li:active .icon img,.share ul li.focus .icon img{margin-top:-100px;}
 
-@media (min-width:666px)and (max-width:1200px){
+@media (min-width:666px)and (max-width:1290px){
 	.login-box {max-width: 400px;top: 15%}
 	.login-box .logo {margin-bottom: 20px;}
 	.login-box .logo-text { margin-bottom: 40px;}
