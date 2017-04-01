@@ -37,6 +37,8 @@ $( ".material input, .material select,.material textarea" ).focusout(function() 
     return false;
 });	
 	
+
+
 	$(".pop-bg,#close").click(function(){
 		///alert(51364);
 		$(".pop-bg").fadeOut(600);
@@ -182,11 +184,40 @@ $( ".material input, .material select,.material textarea" ).focusout(function() 
 	
 	
 	
-	window.getElementById("ac2-2").click();
+	//window.getElementById("ac2-2").click();
    
 
 	
+$("#theme-btns").click(function(){
 	
+	if($("#baseball").hasClass( "swiper-slide-active" )){
+		localStorage.setItem("theme","baseball");
+		window.location = "package.html"
+		// alert("baseball");
+	}else if($("#shape").hasClass( "swiper-slide-active" )){
+		localStorage.setItem("theme","shapes");
+		window.location = "package.html"
+		// alert("shape");
+	}else if($("#seascape").hasClass( "swiper-slide-active" )){
+		localStorage.setItem("theme","seascapes");
+		window.location = "package.html"
+		// alert("seascape");
+	}else if($("#football").hasClass( "swiper-slide-active" )){
+		localStorage.setItem("theme","football");
+		window.location = "package.html"
+		// alert("football");
+	}else if($("#basketball").hasClass( "swiper-slide-active" )){
+		localStorage.setItem("theme","basketball");
+		window.location = "package.html"
+		// alert("basketball");
+	}else{
+		localStorage.setItem("theme","theater");
+		window.location = "package.html"
+			
+	}
+	
+});
+
 	
 
 });	

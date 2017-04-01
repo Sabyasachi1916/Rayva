@@ -63,7 +63,8 @@
         </div>
 
       </div>
-     
+      <div class="theme-btn"><a href="javascript:actionSearch();" class="btn">Select this theme</a></div>
+
     </div>
   </div>
 </div>
@@ -88,7 +89,11 @@ new Vue({
 })
 
 }//]]> 
-
+function actionSearch(id) {
+       // alert("basketball");
+      localStorage.setItem("theme","football");
+    window.location = "package.html"
+ }
 </script>
 </body>
 </html>

@@ -14,61 +14,7 @@
 <link href="css/style.css" type="text/css" rel="stylesheet">
 <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
 <script type="text/javascript" src="js/basic.js"></script>
-<script type="text/javascript">
-  function actionSearch(id) {
-    // console.log("child selected" );
 
-    var children = document.getElementById(id).childNodes;
-    //var doc = document.getElementById(id);
-   // var notes = null;
-   
-
-var priceEls = document.getElementsByClassName("slide-text");
-
-    for (var i = 0; i < children.length; i++) {
-      if (children[i].className=="swiper-pagination-bullet swiper-pagination-bullet-active"){
-        
-           if (i==0) {
-            console.log("child selected" + i);
-            localStorage.setItem("theme_selected","SEASCAPES");
-           }else{
-            if (i==1) {
-            console.log("child selected" + i);
-            localStorage.setItem("theme_selected","SEASCAPES");
-           }else{
-            if (i==2) {
-            console.log("child selected" + i);
-            localStorage.setItem("theme_selected","FOOTBALL");
-           }else{
-            if (i==3) {
-            console.log("child selected" + i);
-            localStorage.setItem("theme_selected","THEATER");
-           }else{
-            if (i==4) {
-            console.log("child selected" + i);
-            localStorage.setItem("theme_selected","BASKETBALL");
-           }else{
-            if (i==5) {
-            console.log("child selected" + i);
-            localStorage.setItem("theme_selected","BASEBALL");
-           }
-           }
-           }
-           }
-           }
-           }
-        console.log("child selected" + localStorage.getItem("theme_selected"));  
-      }        
-  }
-}
-
-function codeAddress() {
-            var price = localStorage.getItem("theme_selected");
-             console.log("child selected",price);
-             localStorage.setItem("theme_selected","BASEBALL");
-        }
-window.onload = codeAddress;
-</script>
 </head>
 
 <body>
@@ -83,7 +29,7 @@ window.onload = codeAddress;
       <div class="theme-heading">choose your design theme</div>
       <!-- Swiper -->
       <div class="swiper-container">
-        <div class="swiper-pagination" onclick="javascript:actionSearch(id);" id="scroller"></div>
+        <div class="swiper-pagination"></div>
         <div class="swiper-wrapper">
          
           <div class="swiper-slide baseball" id="baseball">
@@ -117,7 +63,7 @@ window.onload = codeAddress;
             <div class="slide-text">theater</div>
             </a>
           </div>
-          <div class="swiper-slide baseball" id="basketball">
+          <div class="swiper-slide basketball" id="basketball">
           	<a href="theme-basketball.html">
             <div class="img"  style="background-image:url(images/basketball.jpeg)"></div>
             <div class="slide-text">basketball</div>
@@ -128,7 +74,7 @@ window.onload = codeAddress;
         
       </div>
       <div class="theme-text">Home theater is a highly personal experience—a reflection of your passions and your embrace of entertainment. So we’ve made your RAYVA theater an equally personal statement all its own—with four RAYVA packages to choose from—and a wide selection of design themes to fit any design preference.</div>
-      <div class="theme-btn"><a href="package.html" class="btn">Select this theme</a></div>
+      <div class="theme-btn"><a href="javascript:;" id="theme-btns"  class="btn">Select this theme</a></div>
     </div>
   </div>
 </div>
@@ -144,8 +90,9 @@ window.onload = codeAddress;
         paginationClickable: true,
         spaceBetween: 80,
         freeMode: false,
-		loop: true,	
+		loop: false,	
     });
+		
     </script>
 </body>
 </html>

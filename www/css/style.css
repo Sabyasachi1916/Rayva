@@ -80,6 +80,7 @@ select option{padding:0 5px;}
 .material  + .btn{margin-top:40px;}
 .material img{width:100%}
 .material  input,.material  select,.material  textarea{border:none;padding:10px 90px 10px 10px;width:100% !important; resize:none; background:none; color:#000; display:block;font-size: 18px;line-height: 34px; box-shadow:none;-moz-box-shadow:none;-webkit-box-shadow:none;  box-sizing:border-box; -webkit-box-sizing:border-box; margin:0}
+.material  select + .bar:after{content:'';position:absolute;right:0; top:-20px; border-top:#aaa solid 6px; border-left: transparent solid 4px; border-right: transparent solid 4px; border-bottom: transparent solid 4px;}
 .material  label {position:absolute;height:100%;width:150px; top:0px;left:0px;text-align:left; font-size:18px;color:rgba(0,0,0,.5);pointer-events: none; transistion: 0.3s all;  -webkit-transition:0.3s  all;-moz-transition:0.3s  all; margin:0;padding:0 15px; line-height:54px;}
 .material .bar {position:relative;width:100%;display:block;}
 
@@ -343,8 +344,8 @@ ul.control-list li .others-text{color: #DDD819; font-size:18px; }
 .order-review ul.list li .name span{font-size: 12px;line-height: 15px;font-family: 'gothamlight';margin-bottom:14px;display:block;}
 .order-review .control-footer{padding-top:10px;}
 .order-review .control-footer .price{color: #000000;}
-.share{position:relative;height:calc(100% - 400px)}
-.share ul{padding:0; margin:0; list-style:none; position:absolute;top:50%; text-align:center; transform:translate(-50%,-70%); left:50%;width:100%;}
+.share{position:relative;height:calc(100% - 270px)}
+.share ul{padding:0; margin:0; list-style:none; position:absolute;top:50%; text-align:center; transform:translate(-50%,-60%); left:50%;width:100%;}
 .share ul li{width:250px; height:250px;border-radius: 10px;background:#fff;display:inline-block;margin:35px;padding:10px; box-sizing:border-box;font-size: 20px;line-height: 24px;color: #000000;text-transform:uppercase; font-weight:bold;}
 .share ul li.active,.share ul li:active,.share ul li:focus,.share ul li:hover{box-shadow: inset 10px 10px 40px 0 rgba(0,0,0,0.2);color:#fff;background: rgb(0,146,156);
 background: -moz-linear-gradient(-45deg,  rgba(0,146,156,1) 0%, rgba(182,178,0,1) 100%);

@@ -19,20 +19,17 @@
            var name = document.getElementById('name').value;
            if (name.value=="") {
                 alert("Please enter your name");
-                document.getElementById('name').focus();
                 return false
            }else{
             localStorage.setItem("name",name)
            }
 
            var contact = document.getElementById('contact').value;
-            if (/^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/.test(contact)) {
+            if (/^\d{10}$/.test(contact)) {
               localStorage.setItem("contact",contact);
-              document.getElementById('contact').style.color = 'black';
+              
             } else {
                 alert("Invalid number. Must be ten digits");
-                document.getElementById('contact').focus();
-                document.getElementById('contact').style.color = 'red';
                 return false;
               }
           var email = document.getElementById('email').value;
@@ -40,12 +37,9 @@
             if (reg.test(email) == false) 
               {
                 alert('Invalid Email Address');
-                document.getElementById('email').focus();
-                document.getElementById('email').style.color = 'red';
                 return false;
               }else{
                 localStorage.setItem("email",email)
-                document.getElementById('email').style.color = 'black';
                
               }
               
@@ -53,7 +47,6 @@
             var street = document.getElementById('street').value;
             if (street.value=="") {
                 alert("Please enter your street name");
-                document.getElementById('street').focus();
                 return false
             }else{
                 localStorage.setItem("street",street)
@@ -63,7 +56,6 @@
              var city = document.getElementById('city').value;
               if (city.value=="") {
                 alert("Please enter your city name");
-                document.getElementById('city').focus();
                 return false
               }else{
                 localStorage.setItem("city",city)
@@ -73,7 +65,6 @@
               var state = document.getElementById('state').value;
               if (state.value=="") {
                 alert("Please enter your state name");
-                document.getElementById('state').focus();
                 return false
               }else{
                 localStorage.setItem("state",state)
@@ -84,12 +75,9 @@
               var isValidZip = /(^\d{5}$)/.test(zip);
               if (!isValidZip) {
                 alert("Please enter valid zip code");
-                document.getElementById('zip').focus();
-                document.getElementById('zip').style.color = 'red';
                 return false
               }else{
                 localStorage.setItem("zip",zip)
-                document.getElementById('zip').style.color = 'black';
               }
               location.href="order-review.html"
 
@@ -112,17 +100,17 @@
       <div class="contact-form">
             <form>
                 	<div class="material ">
-                      <input required="" title="" value="" type="text" id="name" required>
+                      <input  title="" value="" type="text" id="name" required>
                       <span class="bar"></span>
                       <label for="Last Name">CUSTOMER NAME</label>
                     </div>
                     <div class="material ">
-                      <input required="" title="" value="" type="text" id="contact" required>
+                      <input title="" value="" type="text" id="contact" required>
                       <span class="bar"></span>
                       <label for="Last Name">CONTACT NUMBER</label>
                     </div>
                     <div class="material ">
-                      <input required="" title="" value="" type="email" id="email" required>
+                      <input  title="" value="" type="email" id="email" required>
                       <span class="bar"></span>
                       <label for="Last Name">E-MAIL</label>
                     </div>
@@ -132,22 +120,10 @@
                       <label for="Last Name">STREET NAME</label>
                     </div>
                     <div class="material ">
-                      <input required="" title="" value="" type="text" id="city">
-                      <span class="bar"></span>
-                      <label for="Last Name">CITY</label>
-                    </div>
-                    
-                    <!-- <div class="material ">
-                      <input required="" title="" value="" type="text" id="state">
-                      <span class="bar"></span>
-                      <label for="Last Name">STATE</label>
-                    </div> -->
-                    
-                    <div class="material ">
                       <!--<input required="" title="" value="" type="text" id="state">-->
                       <select id="state">
-                        <option></option>
-                        <option>Alabama</option>
+                      	<option></option>
+                      	<option>Alabama</option>
                         <option>Alaska</option>
                         <option>American Samoa</option>
                         <option>Arizona</option>
@@ -210,15 +186,32 @@
                       <span class="bar"></span>
                       <label for="Last Name">STATE</label>
                     </div>
-
+                    <div class="material ">
+                      <input required="" title="" value="" type="text" id="city">
+                      <span class="bar"></span>
+                      <label for="Last Name">CITY</label>
+                    </div>
+                    
+                    
+                    
                     <div class="material ">
                       <input required="" title="" value="" type="text" id="zip">
                       <span class="bar"></span>
                       <label for="Last Name">ZIPCODE</label>
                     </div>
-                    
+                    <!--<div class="material ">
+                      <input required="" title="" value="" type="text" list="cars" >
+                        <datalist id="cars">
+                          <option>Volvo</option>
+                          <option>Saab</option>
+                          <option>Mercedes</option>
+                          <option>Audi</option>
+                        </datalist>
+                      <span class="bar"></span>
+                      <label for="Last Name">ZIPCODE</label>
+                    </div>-->
                     <div class="material ">
-                      <input required="" title="" value="United States Of America" type="text" id="country">
+                     <input required="" title="" value="United States Of America" type="text" id="country">
                       <span class="bar"></span>
                       <label for="Last Name">COUNTRY</label>
                     </div>
