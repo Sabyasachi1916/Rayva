@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<title>RAYVA</title>
+<link href="css/style.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="js/basic.js"></script>
+<script type="text/javascript">
+
+function login2() {
+var username = document.getElementById("username").value;;
+var password = document.getElementById("password").value;;
+// alert(username.toLowerCase());
+var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open('POST', 'https://ec2-35-165-69-128.us-west-2.compute.amazonaws.com:8443/webtools/control/SOAPService/', true);
+ 
+        // build SOAP request
+        var soapMessage =
+'<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="https://ec2-35-165-69-128.us-west-2.compute.amazonaws.com:8443/webtools/control/SOAPService/">'+
+'<soapenv:Header/>'+
+'<soapenv:Body>'+
+  '<ser:userLogin>'+
+     '<map-Map>'+
+        '<ser:map-Entry>'+
+          ' <ser:map-Key>'+
+              '<ser:std-String value="login.username"/>'+
+           '</ser:map-Key>'+
+          ' <ser:map-Value>'+
+                                             ' <ser:std-String value="'+ username.toLowerCase() +'"/>'+
+           '</ser:map-Value>'+
+        '</ser:map-Entry>'+
+ 
+                                           ' <ser:map-Entry>'+
+           '<ser:map-Key>'+
+              '<ser:std-String value="login.password"/>'+
+           '</ser:map-Key>'+
+           '<ser:map-Value>'+
+                                              '<ser:std-String value="'+ password +'"/>'+
+           '</ser:map-Value>'+
+        '</ser:map-Entry>'+
+    ' </map-Map>'+
+  '</ser:userLogin>'+
+'</soapenv:Body>'+
+'</soapenv:Envelope>';
+        // admin,  "ofbiz"
+        xmlhttp.onreadystatechange = function () {
+          // alert(xmlhttp.status);
+            if (xmlhttp.readyState == 4) {
+                if (xmlhttp.status == 200) {
+                   // alert(xmlhttp.response);
+                  var xmlResponse =xmlhttp.responseXML.documentElement;
+
+					var fullNodeList = xmlResponse.getElementsByTagName("std-String");
+          var count = fullNodeList.length
+					// for (var i=0; i < fullNodeList.length; i++)
+					// {
+  						 // alert(fullNodeList[i].attributes[0].value);
+               if (fullNodeList[count-1].attributes[0].value == "success"){
+                 // alert(fullNodeList[i].attributes[0].value);
+                 window.location.href="login-continue.html";
+
+               }else{
+                alert(fullNodeList[count-1].attributes[0].value);
+               }
+					   // }
+            }
+          }
+        }
+        // Send the POST request
+        xmlhttp.setRequestHeader('Content-Type', 'text/xml');
+         // alert(soapMessage);
+        xmlhttp.send(soapMessage);
+}
+
+</script>
+</head>
+
+<body>
+<div class="maincontainer">
+	<div class="main">
+    <div class="login-bg">
+    	<div class="login-box">
+    	<div class="logo"><img src="images/logo.png" alt=""></div>
+        <div class="logo-text"><img src="images/logo-text.png" alt=""></div>
+        <div class="login-form">
+        	<div class="heading">SIGN IN</div>
+            <div class="text">Sign in with your official account</div>
+            <form>
+                	<div class="material login-user">
+                      <input required="" title="" value="" type="text" id="username">
+                      <span class="bar"></span>
+                      <label for="Last Name">User Name</label>
+                    </div>
+                    <div class="material login-pass">
+                      <input required="" title="" value="" type="password" id="password">
+                      <span class="bar"></span>
+                      <label for="Last Name">Password</label>
+                    </div>
+                    <div class="btn btn-block login-btn"><div onclick="javascript:login2();">Next</div></div>
+                    <!-- <a href="login-continue.html" class="btn btn-block login-btn">Next</a> -->
+                    <!-- <div class="clear20" onclick="javascript:login();"></div> -->
+                    <a href="login.php" class="btn btn-block login-btn">Next</a>
+           </form>         
+        </div>
+    </div>
+    </div>
+    </div>
+</div>
+</body>
+</html>

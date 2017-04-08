@@ -9,6 +9,9 @@
     "installed_plugins": {
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.mycompany.rayva"
+        },
+        "cordova-plugin-networkactivityindicator": {
+            "PACKAGE_NAME": "com.mycompany.rayva"
         }
     },
     "dependent_plugins": {}

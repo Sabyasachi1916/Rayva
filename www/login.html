@@ -13,61 +13,75 @@
 <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
 <script type="text/javascript" src="js/basic.js"></script>
 <script type="text/javascript">
-  function login(id) {
-             console.log("In the function");
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.open('GET', 'http://api.kivaws.org/v1/loans/search.json?country_code=US&status=fundraising', true);
 
-            // build SOAP request  https://github.com/Sabyasachi1916   https://ec2-35-165-69-128.us-west-2.compute.amazonaws.com:8443/
-            var sr = "";
-//                 '<?xml version="1.0" encoding="utf-8"?>' +
-//                 '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://ofbiz.apache.org/service/">'+
-//    '<soapenv:Header/>'+
-//    '<soapenv:Body>'+
-//       '<ser:userLogin>'+
-//          '<map-Map>'+
-//             '<ser:map-Entry>'+
-//                '<ser:map-Key>'+
-//                   '<ser:std-String value="userLoginId"/>'+
-//                '</ser:map-Key>'+
-//                '<ser:map-Value>'+
-//               '<ser:std-String value="admin"/>'+
-//                '</ser:map-Value>'+
-//             '</ser:map-Entry>'+
-//              '<ser:map-Entry>'+
-//                '<ser:map-Key>'+
-//                   '<ser:std-String value="login.username"/>'+
-//                '</ser:map-Key>'+
-//                '<ser:map-Value>'+
-//               '<ser:std-String value="admin"/>'+
-//                '</ser:map-Value>'+
-//             '</ser:map-Entry>'+
-//             '<ser:map-Entry>'+
-//                '<ser:map-Key>'+
-//                   '<ser:std-String value="login.password"/>'+
-//                '</ser:map-Key>'+
-//                '<ser:map-Value>'+
-//               '<ser:std-String value="ofbiz"/>'+
-//                '</ser:map-Value>'+
-//             '</ser:map-Entry>'+
-//          '</map-Map>'+
-//       '</ser:userLogin>'+
-//    '</soapenv:Body>'+
-// '</soapenv:Envelope>';
+function login2() {
+var username = document.getElementById("username").value;;
+var password = document.getElementById("password").value;;
+// alert(username.toLowerCase());
+var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open('POST', 'https://ec2-35-165-69-128.us-west-2.compute.amazonaws.com:8443/webtools/control/SOAPService/', true);
+ 
+        // build SOAP request
+        var soapMessage =
+'<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="https://ec2-35-165-69-128.us-west-2.compute.amazonaws.com:8443/webtools/control/SOAPService/">'+
+'<soapenv:Header/>'+
+'<soapenv:Body>'+
+  '<ser:userLogin>'+
+     '<map-Map>'+
+        '<ser:map-Entry>'+
+          ' <ser:map-Key>'+
+              '<ser:std-String value="login.username"/>'+
+           '</ser:map-Key>'+
+          ' <ser:map-Value>'+
+                                             ' <ser:std-String value="'+ username.toLowerCase() +'"/>'+
+           '</ser:map-Value>'+
+        '</ser:map-Entry>'+
+ 
+                                           ' <ser:map-Entry>'+
+           '<ser:map-Key>'+
+              '<ser:std-String value="login.password"/>'+
+           '</ser:map-Key>'+
+           '<ser:map-Value>'+
+                                              '<ser:std-String value="'+ password +'"/>'+
+           '</ser:map-Value>'+
+        '</ser:map-Entry>'+
+    ' </map-Map>'+
+  '</ser:userLogin>'+
+'</soapenv:Body>'+
+'</soapenv:Envelope>';
+        // admin,  "ofbiz"
+        xmlhttp.onreadystatechange = function () {
+          // alert(xmlhttp.status);
+            if (xmlhttp.readyState == 4) {
+                if (xmlhttp.status == 200) {
 
-            xmlhttp.onreadystatechange = function () {
-                if (xmlhttp.readyState == 4) {
-                    if (xmlhttp.status == 200) {
-                      console.log(xmlhttp.response)
-                        alert('done. use firebug/console to see network response');
-                        window.location = "login-continue.html";
-                    }
-                }
+                   // alert(xmlhttp.response);
+                  var xmlResponse =xmlhttp.responseXML.documentElement;
+
+					var fullNodeList = xmlResponse.getElementsByTagName("std-String");
+          var count = fullNodeList.length
+					// for (var i=0; i < fullNodeList.length; i++)
+					// {
+  						 // alert(fullNodeList[i].attributes[0].value);
+               if (fullNodeList[count-1].attributes[0].value == "success"){
+                 // alert(fullNodeList[i].attributes[0].value);
+                 window.location.href="login-continue.html";
+
+               }else{
+                alert(fullNodeList[count-1].attributes[0].value);
+               }
+               NetworkActivityIndicator.hide();
+					   // }
             }
-            // Send the POST request
-            xmlhttp.setRequestHeader('Content-Type', 'text/xml');
-            xmlhttp.send(sr);
-  }
+          }
+        }
+        // Send the POST request
+        xmlhttp.setRequestHeader('Content-Type', 'text/xml');
+         // alert(soapMessage);
+        xmlhttp.send(soapMessage);
+        NetworkActivityIndicator.show();
+}
+
 </script>
 </head>
 
@@ -83,18 +97,19 @@
             <div class="text">Sign in with your official account</div>
             <form>
                 	<div class="material login-user">
-                      <input required="" title="" value="" type="text">
+                      <input required="" title="" value="" type="text" id="username">
                       <span class="bar"></span>
                       <label for="Last Name">User Name</label>
                     </div>
                     <div class="material login-pass">
-                      <input required="" title="" value="" type="password">
+                      <input required="" title="" value="" type="password" id="password">
                       <span class="bar"></span>
                       <label for="Last Name">Password</label>
                     </div>
-                    <!-- <div class="btn btn-block login-btn"><div onclick="javascript:login();">Next</div></div> -->
-                    <a href="login-continue.html" class="btn btn-block login-btn">Next</a>
-                    <div class="clear20" onclick="javascript:login();"></div>
+                    <div class="btn btn-block login-btn"><div onclick="javascript:login2();">Next</div></div>
+                    <!-- <a href="login-continue.html" class="btn btn-block login-btn">Next</a> -->
+                    <!-- <div class="clear20" onclick="javascript:login();"></div> -->
+                    <a href="login.php" class="btn btn-block login-btn">Next</a>
            </form>         
         </div>
     </div>
