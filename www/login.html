@@ -52,11 +52,11 @@ var xmlhttp = new XMLHttpRequest();
 '</soapenv:Envelope>';
         // admin,  "ofbiz"
         xmlhttp.onreadystatechange = function () {
-          // alert(xmlhttp.status);
+           alert(xmlhttp.status);
             if (xmlhttp.readyState == 4) {
                 if (xmlhttp.status == 200) {
 
-                   // alert(xmlhttp.response);
+                   alert(xmlhttp.response);
                   var xmlResponse =xmlhttp.responseXML.documentElement;
 
 					var fullNodeList = xmlResponse.getElementsByTagName("std-String");
