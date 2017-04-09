@@ -15,8 +15,9 @@
 <script type="text/javascript">
 
 function login2() {
-var username = document.getElementById("username").value;;
-var password = document.getElementById("password").value;;
+var username = document.getElementById("username").value;
+var password = document.getElementById("password").value;
+localStorage.setItem("username",username);
 // alert(username.toLowerCase());
 var xmlhttp = new XMLHttpRequest();
         xmlhttp.open('POST', 'https://ec2-35-165-69-128.us-west-2.compute.amazonaws.com:8443/webtools/control/SOAPService/', true);
@@ -70,7 +71,7 @@ var xmlhttp = new XMLHttpRequest();
                }else{
                 alert(fullNodeList[count-1].attributes[0].value);
                }
-               NetworkActivityIndicator.hide();
+              
 					   // }
             }
           }
@@ -79,7 +80,7 @@ var xmlhttp = new XMLHttpRequest();
         xmlhttp.setRequestHeader('Content-Type', 'text/xml');
          // alert(soapMessage);
         xmlhttp.send(soapMessage);
-        NetworkActivityIndicator.show();
+        
 }
 
 </script>
