@@ -17,11 +17,11 @@ function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
         function codeAddress() {
-            var saved = localStorage.getItem("package_id_roomsize");
+           //  var saved = localStorage.getItem("package_id_roomsize");
            
-           console.log(saved)
+           // console.log(saved)
         $('ul.package li').each(function() {
-                if($(this).attr("data-tab") == saved){
+                if($(this).attr("data-tab") == "tab3"){
                     console.log("got the right li "+this);
                     $(this).click();
                 }
